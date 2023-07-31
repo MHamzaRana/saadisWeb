@@ -4,7 +4,11 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Models\Web\Home;
+use App\Models\Product;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+// use iterable;
+use Symfony\Component\Console\Input\Input;
 
 class HomeController extends Controller
 {
@@ -15,9 +19,59 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('web.pages.home');
+        $newArrivals = Product::orderBy('id', 'desc')->limit(6)->get();
+        $binSaeed = Product::where('brand', 'Bin Saeed')->orderBy('id', 'desc')->limit(6)->get();
+        $alaaya = Product::where('brand', 'Alaaya')->orderBy('id', 'desc')->limit(6)->get();
+        // dd($newArrivals);
+        return view('web.pages.home', [
+            'newArrivals' => $newArrivals, 'binSaeed' => $binSaeed,
+            'alaaya' => $alaaya
+        ]);
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function explore($item = 'new-arrival', Request $request)
+    {
+        $search = $request->input('search');
+        switch ($item) {
+            case 'all-collections':
+                if($search)
+                $products = Product::where('status',"publish")->where('name','LIKE',"%{$search}%")->orderBy('id', 'desc')->paginate(20);
+                else
+                $products = Product::where('status',"publish")->orderBy('id', 'desc')->paginate(20);
+
+                $banner = asset('theme/images/all-collections.jpg');
+                $title = 'All Collections';
+                break;
+
+            case 'bin-saeed':
+                $products = Product::where('status',"publish")->where('brand', 'Bin Saeed')->orderBy('id','desc')->paginate(20);
+                $banner = asset('theme/images/bin-saeed-01.png');
+                $title = 'Bin Saeed';
+                break;
+            case 'alaaya':
+                $products = Product::where('status',"publish")->where('brand', 'Alaaya')->orderBy('id','desc')->paginate(20);
+                $banner = asset('theme/images/alaaya.jpg');
+                $title = 'Alaaya';
+                break;
+            default:
+                $products = Product::where('status',"publish")->where('created_at', '>=', Carbon::now()->subDays(5)->toDateTimeString())
+                ->orderBy('id', 'desc')->paginate(20);
+                $banner = asset('theme/images/new-arrival.jpg');
+                $title = 'New Arrival';
+                break;
+        }
+
+        // $banner = asset('theme/images/bin-saeed-01.png');
+        // dd($newArrivals);
+        return view('web.pages.explore', ['products' => $products, 'banner' => $banner, 'title' => $title]);
+    }
+
+   
     /**
      * Show the form for creating a new resource.
      *

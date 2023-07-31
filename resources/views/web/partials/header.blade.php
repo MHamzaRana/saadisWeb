@@ -1,5 +1,5 @@
 <!-- banner bg main start -->
-<div class="banner_bg_main">
+<div class="banner_bg_main" @if(isset($banner)) style="background-image: url({{$banner}});padding-bottom:4rem;" @endif>
     <!-- header top section start -->
     <div class="container">
         <div class="header_section_top">
@@ -24,7 +24,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="logo"><a href="index.html"><img src="{{asset('theme/images/profile.png')}}"></a></div>
+                    <div class="logo"><a href="{{env('APP_URL')}}"><img src="{{asset('theme/images/profile.png')}}"></a></div>
                 </div>
             </div>
         </div>
@@ -37,9 +37,10 @@
                 <div id="mySidenav" class="sidenav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     <a href="index.html">Home</a>
-                    <a href="newarrival.html">New Arrival</a>
-                    <a href="binsaeed.html">Bin Saeed</a>
-                    <a href="aalaya.html">Aalaya</a>
+                    <a href="{{route('explore','new-arrival')}}">New Arrival</a>
+                    <a href="{{route('explore','bin-saeed')}}">Bin Saeed</a>
+                    <a href="{{route('explore','alaaya')}}">Aalaya</a>
+                    <a href="{{route('explore','all-collections')}}">All Collections</a>
                 </div>
                 <span class="toggle_icon" onclick="openNav()"><img src="{{asset('theme/images/toggle-icon.png')}}"></span>
                 <div class="dropdown d-none">
@@ -53,14 +54,18 @@
                 </div>
                 <div class="main">
                     <!-- Another variation with a button -->
+                    <form action="{{route('explore','all-collections')}}" method="get" id="searchForm">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search">
+                        
+                        <input type="text" name="search" class="form-control" placeholder="Search" id="searchInput">
                         <div class="input-group-append">
-                            <button class="btn btn-secondary" type="button" style="background-color: #63a5ee; border-color:#63a5ee ">
+                            <button class="btn btn-secondary" type="button" onclick="$('#searchForm').submit();" style="background-color: #63a5ee; border-color:#63a5ee ">
                                 <i class="fa fa-search"></i>
                             </button>
                         </div>
+                        
                     </div>
+                    </form>
                 </div>
                 <div class="header_box">
                     <div class="lang_box d-none">
@@ -76,11 +81,11 @@
                     </div>
                     <div class="login_menu">
                         <ul>
-                            <li><a href="#">
+                            <li><a href="{{route('cart')}}">
                                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                     <span class="padding_10">Cart</span></a>
                             </li>
-                            <li><a href="#">
+                            <li><a href="{{route('cart')}}">
                                     <i class="fa fa-user" aria-hidden="true"></i>
                                     <span class="padding_10">Cart</span></a>
                             </li>

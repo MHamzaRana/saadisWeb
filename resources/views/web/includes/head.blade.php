@@ -21,9 +21,10 @@
     <!-- Responsive-->
     <link rel="stylesheet" href="{{asset('theme/css/responsive.css')}}">
     <!-- fevicon -->
-    <link rel="icon" href="{{asset('theme/images/fevicon.png')}}" type="image/gif" />
+    <link rel="icon" href="{{asset('theme/images/favicon.png')}}" type="image/gif" />
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="{{asset('theme/css/jquery.mCustomScrollbar.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/custom.css')}}">
     <!-- Tweaks for older IEs-->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <!-- fonts -->

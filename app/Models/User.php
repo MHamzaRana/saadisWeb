@@ -24,8 +24,10 @@ class User extends Authenticatable
         'secondary_phone',
         'country',
         'city',
-        'address',
+        'billing_address',
+        'shipment_address',
         'type',
+        'role',
         'password',
     ];
 

@@ -1,0 +1,56 @@
+.play-button{
+    position: absolute;
+    left: 42%;
+    top: 47%;
+    background-color: #b3b3b3;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.product-img{
+    min-height: 500px;
+    max-height: 500px;
+    object-fit: cover;
+}
+.tshirt_img{
+    margin: 10px 0;
+}
+
+.loadMore {
+    padding-bottom: 30px;
+    padding-top: 30px;
+    text-align: center;
+    width: 100%;
+}
+.loadMore a {
+    background: #63a5ee;
+    border-radius: 3px;
+    color: white;
+    display: inline-block;
+    padding: 10px 30px;
+    transition: all 0.25s ease-out;
+    -webkit-font-smoothing: antialiased;
+}
+.loadMore a:hover {
+    background-color: #f26522;
+}
+
+.float{
+	position:fixed;
+	/* width:60px; */
+	/* height:60px; */
+    padding: 10px 15px;
+	bottom:40px;
+	right:40px;
+	background-color:#63a5ee;
+	color:#FFF;
+	border-radius:5px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	/* margin-top:22px; */
+}
+.cursor-pointer{
+    cursor: pointer;
+}

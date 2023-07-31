@@ -18,7 +18,7 @@ class CreateMediaTable extends Migration
             $table->string('name');
             $table->string('path')->nullable();
             $table->string('url')->nullable();
-            $table->enum('url_type',['youtube', 'facebook', 'local'])->default('youtube');
+            $table->enum('url_type',['youtube', 'facebook', 'local'])->default('local');
             $table->enum('type',['video','audio','image','pdf'])->default('video');
             $table->timestamps();
         });

@@ -5,24 +5,24 @@
                 <div class="carousel-item active">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
-                            <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                            <h1 class="banner_taital">Get Start <br>With New Arrival</h1>
+                            <div class="buynow_bt"><a href="{{route('explore','new-arrival')}}">Buy Now</a></div>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
-                            <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                            <h1 class="banner_taital">Get Start <br>With Bin Saeed</h1>
+                            <div class="buynow_bt"><a href="{{route('explore','bin-saeed')}}">Buy Now</a></div>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
-                            <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                            <h1 class="banner_taital">Get Start <br>With alaaya</h1>
+                            <div class="buynow_bt"><a href="{{route('explore','alaaya')}}">Buy Now</a></div>
                         </div>
                     </div>
                 </div>

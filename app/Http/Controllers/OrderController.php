@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -16,7 +17,27 @@ class OrderController extends Controller
     {
         //
     }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function cart(Request $request)
+    {
+        $itemsIds = [];
+        $items = $request->input('items');
+        if($items){
+            $itemsIds = json_decode($items);
+        }
+        // dd($itemsIds);
+        $products = Product::whereIn('id',$itemsIds)->orderBy('id', 'desc')->get();
+        // dd($newArrivals);
+        $banner = asset('theme/images/all-collections.jpg');
 
+        return view('web.pages.explore', [
+            'products' => $products, 'title' => 'Cart', 'banner' => $banner
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *

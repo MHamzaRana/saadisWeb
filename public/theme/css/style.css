@@ -621,15 +621,15 @@ a:hover {
 .buy_bt a {
     width: 100%;
     font-size: 16px;
-    color: #f26522;
-    background-color: transparent;
+    color: #f26522 !important;
+    background-color: transparent !important;
     text-align: right;
     font-weight: bold;
 }
 
 .buy_bt a:hover {
-    background-color: transparent;
-    color: #262626;
+    background-color: transparent !important;
+    color: #262626 !important;
 }
 
 .seemore_bt {
