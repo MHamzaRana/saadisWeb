@@ -33,12 +33,14 @@
                                 </div>
                             </div>
                             @endforeach
-                            
+                            <div class="col-md-12 mt-5 tbl-pagination">
+                                {{ $products->links('pagination::bootstrap-4') }}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
         </div>
         <!-- <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
             <i class="fa fa-angle-left"></i>
