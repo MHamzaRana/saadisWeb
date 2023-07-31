@@ -58,6 +58,12 @@ class HomeController extends Controller
                 $banner = asset('theme/images/alaaya.jpg');
                 $title = 'Alaaya';
                 break;
+            case 'today-deal':
+                $products = Product::where('status',"publish")->where('created_at', Carbon::now()->toDateTimeString())->orderBy('id','desc')->paginate(20);
+                $banner = asset('theme/images/alaaya.jpg');
+                $title = 'Today`s Deal';
+                break;
+                
             default:
                 $products = Product::where('status',"publish")->where('created_at', '>=', Carbon::now()->subDays(5)->toDateTimeString())
                 ->orderBy('id', 'desc')->paginate(20);
