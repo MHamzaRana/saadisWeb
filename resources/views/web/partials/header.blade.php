@@ -42,7 +42,7 @@
                     <a href="{{route('explore','alaaya')}}">Aalaya</a>
                     <a href="{{route('explore','all-collections')}}">All Collections</a>
                 </div>
-                <span class="toggle_icon" onclick="openNav()"><img src="{{asset('theme/images/toggle-icon.png')}}"></span>
+                <span class="toggle_icon" onclick="openNav()"><img class="toggle-icon-img" src="{{asset('theme/images/toggle-icon.png')}}"></span>
                 <div class="dropdown d-none">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Category
                     </button>
