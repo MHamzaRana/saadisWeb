@@ -19,7 +19,7 @@
                                     <p class="price_text">Price <s style="color: #969696;">Rs. {{$new->st_price}}</s><br><span style="color: #262626;"> Rs. {{$new->price}}</span></p>
                                     <div class="tshirt_img">
                                         <img class="product-img" src="{{env('ADMIN_URL') .'/uploads/images/products/'. $new->images[0]->path}}">
-                                        <img class="play-button" data-url="{{$new->video[0]->url}}" src="{{asset('theme/images/play-button.png')}}">
+                                        <img class="play-button" onclick="playVideo('{{$new->video[0]->url}}?autoplay=1');" data-url="{{$new->video[0]->url}}" src="{{asset('theme/images/play-button.png')}}" data-toggle="modal" data-target=".video-modal-lg">
 
                                         <!-- <iframe width="100%" height="500" src="https://www.youtube.com/embed/HyQWr89JVEg"
                                             sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation">
@@ -51,5 +51,22 @@
     </div>
 </div>
 <!-- fashion section end -->
-
+@push('modal')
+<div class="modal fade video-modal-lg" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <!-- stopVideo(); -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" onclick="stopVideo();" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <iframe width="100%" height="600" class="prod-video" id="prodVideoLink" src="https://www.youtube.com/embed/HyQWr89JVEg" sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+@endpush
 @endsection

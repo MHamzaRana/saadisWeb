@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\City;
+use App\Models\Country;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -31,11 +33,13 @@ class OrderController extends Controller
         }
         // dd($itemsIds);
         $products = Product::whereIn('id',$itemsIds)->orderBy('id', 'desc')->get();
-        // dd($newArrivals);
+        // dd($products);
         $banner = asset('theme/images/all-collections.jpg');
-
-        return view('web.pages.explore', [
-            'products' => $products, 'title' => 'Cart', 'banner' => $banner
+        $cities = City::all();
+        $countries = Country::all();
+        return view('web.pages.cart', [
+            'products' => $products, 'title' => 'Cart', 'banner' => $banner, 'cities' => $cities,
+            'countries' => $countries
         ]);
     }
     /**
@@ -56,7 +60,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**

@@ -52,7 +52,7 @@
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </div>
-                <div class="main">
+                <div @if(isset($title) && $title == 'Cart') class="main d-none" @else class="main" @endif>
                     <!-- Another variation with a button -->
                     <form action="{{route('explore','all-collections')}}" method="get" id="searchForm">
                     <div class="input-group">
@@ -67,7 +67,7 @@
                     </div>
                     </form>
                 </div>
-                <div class="header_box">
+                <div @if(isset($title) && $title == 'Cart') class="header_box d-none" @else class="header_box" @endif>
                     <div class="lang_box d-none">
                         <a href="#" title="Language" class="nav-link" data-toggle="dropdown" aria-expanded="true">
                             <img src="{{asset('theme/images/flag-uk.png')}}" alt="flag" class="mr-2 " title="United Kingdom"> English <i class="fa fa-angle-down ml-2" aria-hidden="true"></i>

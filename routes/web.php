@@ -21,3 +21,4 @@ Route::get('/explore/bin-saeed', [HomeController::class, 'binSaeed'])->name('bin
 Route::get('/explore/alaaya', [HomeController::class, 'alaaya'])->name('alaaya');
 Route::get('/explore/all-collections', [HomeController::class, 'allCollection'])->name('all-collections');
 Route::get('/cart', [OrderController::class, 'cart'])->name('cart');
+Route::post('/place-order', [OrderController::class, 'store'])->name('place-order');

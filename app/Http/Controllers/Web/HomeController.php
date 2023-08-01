@@ -73,7 +73,7 @@ class HomeController extends Controller
         }
 
         // $banner = asset('theme/images/bin-saeed-01.png');
-        // dd($newArrivals);
+        // dd($products);
         return view('web.pages.explore', ['products' => $products, 'banner' => $banner, 'title' => $title]);
     }
 

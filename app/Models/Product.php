@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    protected $with = ['video','images'];
+    protected $with = ['video','images', 'inventory'];
     public function media() {
         return $this->belongsToMany('App\Models\Media', 'product_media', 'product_id', 'media_id');
     }
@@ -17,5 +17,8 @@ class Product extends Model
     }
     public function images() {
         return $this->media()->where('type', 'image');
+    }
+    public function inventory() {
+        return $this->hasOne('App\Models\Inventory', 'product_id', 'id');
     }
 }

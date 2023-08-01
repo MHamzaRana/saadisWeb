@@ -27,13 +27,21 @@
 </div>
 <!-- copyright section end -->
 
+
+
 <form action="{{route('cart')}}" method="get" class="float" id="CartInstantView">
+   
    <a class="float cursor-pointer" onclick="$('#CartInstantView').submit();">
    <span id="noOfItems">2</span> <span id="cartItemSpell">items</span> added to cart
    <i class="fa fa-2x fa-shopping-cart my-float"></i>
    <input type="hidden" name="items" id="cartItemsValue">
+   <!-- <input type="hidden" name="user" id="userPhone"> -->
    </a>
 </form>
+
+<!-- modal section -->
+@stack('modal')
+<!-- modal section end -->
 <!-- Javascript files-->
 <script src="{{asset('theme/js/jquery.min.js')}}"></script>
 <script src="{{asset('theme/js/popper.min.js')}}"></script>
@@ -53,6 +61,8 @@
       document.getElementById("mySidenav").style.width = "0";
    }
 </script>
+
+@stack('scripts')
 </body>
 
 </html>
