@@ -53,6 +53,10 @@
                     <button type="submit" class="btn btn-primary bg-theme mt-4 w-100">Place Order</button>
 
                 </div>
+                @php 
+                    $total = 0;
+                    $ids = [];
+                @endphp
                 <div class="col-md-6">
                     * Delivery charges may vary depending on the parcel weight.
                     @foreach($products as $new)
@@ -60,8 +64,9 @@
                         <div class="card-body">
                             <img class="col-md-4 card-img float-left prod-card-img" src="{{env('ADMIN_URL') .'/uploads/images/products/'. $new->images[0]->path}}">
                             <h5 class="card-title">{{$new->name}}</h5>
-                            <p class="card-text">Price: Rs.{{$new->price}} + Delivery Charges: Rs.200 = {{(intval($new->price) + intval(200))}}</p>
+                            <p class="card-text">Price: Rs. <span id="prc_pid{{($new->id)}}">{{$new->price}}</span></p>
                             @if($new->inventory && intval($new->inventory->qty) > 0)
+                            @php $total += intval($new->price); array_push($ids,$new->id); @endphp
                             <div class="offset-md-8 col-md-4">
                                 <div class="input-group">
                                     <span class="input-group-btn">
@@ -69,7 +74,7 @@
                                             <i class="fa fa-minus"></i>
                                         </button>
                                     </span>
-                                    <input type="text" name="qty[pid{{($new->id)}}]" class="form-control input-number" value="1" min="0" @if(intval($new->inventory->qty) < 5) max="{{$new->inventory->qty}}" @else max="5" @endif>
+                                    <input type="text" id="qty_pid{{($new->id)}}" name="qty[pid{{($new->id)}}]" class="form-control input-number" value="1" min="0" @if(intval($new->inventory->qty) < 5) max="{{$new->inventory->qty}}" @else max="5" @endif>
                                     <span class="input-group-btn">
                                         <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="qty[pid{{($new->id)}}]">
                                             <i class="fa fa-plus"></i>
@@ -84,6 +89,16 @@
                         </div>
                     </div>
                     @endforeach
+
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h3 class="card-title p-0">Total</h3>
+                            <p class="card-text">Price: Rs. <span id="totalCharges">{{$total}}</span><br>
+                            Delivery Charges: Rs. <span id="deliveryCharges">200</span><br>
+                            Net Amount: Rs. <span id="netAmount">{{(intval($total) + intval(200))}}</span></p>
+                            
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -112,6 +127,7 @@
 
 @push('scripts')
 <script>
+    let ids = JSON.parse("{{json_encode($ids)}}");
     $(document).ready(function() {
         finalCartItems();
         $('#CartInstantView').hide();
@@ -173,7 +189,39 @@
             alert('Sorry, the maximum value was reached');
             $(this).val($(this).data('oldValue'));
         }
+        grossAmnt = 0;
+        netAmnt = 0;
+        totalQty = 0;
+        $.each(ids,function(k,v){
+            console.log(v);
+            console.log($('#prc_pid'+v).text());
+            console.log($('#qty_pid'+v).val());
+            prc = $('#prc_pid'+v).text();
+            qty = $('#qty_pid'+v).val();
+            totalPrc = ( parseInt(prc) * parseInt(qty) );
+            totalQty += parseInt(qty);
+            grossAmnt += totalPrc;
+        });
+        setTimeout(() => {
+            $('#totalCharges').text(grossAmnt);
+            if(totalQty <= 2)
+            $('#deliveryCharges').text(125);
+            else if(totalQty > 2 && totalQty <= 5)
+            $('#deliveryCharges').text(250);
+            else if(totalQty > 5 && totalQty <= 10)
+            $('#deliveryCharges').text(500);
+            else if(totalQty > 10 && totalQty <= 15)
+            $('#deliveryCharges').text(750);
+            else if(totalQty > 15 && totalQty <= 20)
+            $('#deliveryCharges').text(1000);
+            else if(totalQty > 20 && totalQty <= 25)
+            $('#deliveryCharges').text(1250);
 
+            setTimeout(() => {
+                netAmnt = grossAmnt + parseInt($('#deliveryCharges').text());
+                $('#netAmount').text(netAmnt);
+            },300);
+        }, 400);
 
     });
     $(".input-number").keydown(function(e) {
