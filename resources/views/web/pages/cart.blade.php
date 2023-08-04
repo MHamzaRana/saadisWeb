@@ -5,6 +5,16 @@
 <!-- cart items section start -->
 <div class="fashion_section">
     <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @if($errors->any())
+                <h5 class="text-white text-center w-100 p-2 bg-danger">* {{ $errors->first() }}</h5>
+                @endif
+                @if(!empty($success))
+                <h5 class="text-white text-center w-100 p-2 bg-success">* {{ $success }}</h5>
+                @endif
+            </div>
+        </div>
         <form action="{{route('place-order')}}" method="post" id="cartForm">
             <div class="row">
                 <h1 class="fashion_taital mt-5">{{$title}}</h1>
@@ -48,14 +58,14 @@
                     </div>
                     <div class="form-group">
                         <label for="userAddress">Address *</label>
-                        <input type="text" class="form-control" id="userAddress" name="shipping_address" placeholder="1234 Main St">
+                        <input type="text" class="form-control" id="userAddress" name="shipment_address" placeholder="1234 Main St">
                     </div>
                     <button type="submit" class="btn btn-primary bg-theme mt-4 w-100">Place Order</button>
 
                 </div>
-                @php 
-                    $total = 0;
-                    $ids = [];
+                @php
+                $total = 0;
+                $ids = [];
                 @endphp
                 <div class="col-md-6">
                     * Delivery charges may vary depending on the parcel weight.
@@ -75,15 +85,16 @@
                                         </button>
                                     </span>
                                     <input type="text" id="qty_pid{{($new->id)}}" name="qty[pid{{($new->id)}}]" class="form-control input-number" value="1" min="0" @if(intval($new->inventory->qty) < 5) max="{{$new->inventory->qty}}" @else max="5" @endif>
-                                    <span class="input-group-btn">
-                                        <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="qty[pid{{($new->id)}}]">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </span>
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="qty[pid{{($new->id)}}]">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </span>
                                 </div>
                             </div>
                             @else
                             <div class="badge badge-danger p-2 float-right fs-m" data-id="{{$new->id}}">Sold out <i class="fa fa-shopping-cart"></i></div>
+                            <p>Not included</p>
                             @endif
                             <!-- <div class="buy_bt btn btn-default cart_remove" data-id="{{$new->id}}" style="display: none;"><a onclick="removeFromCart('{{$new->id}}');">Remove <i class="fa fa-shopping-cart"></i></a></div> -->
                         </div>
@@ -94,9 +105,9 @@
                         <div class="card-body">
                             <h3 class="card-title p-0">Total</h3>
                             <p class="card-text">Price: Rs. <span id="totalCharges">{{$total}}</span><br>
-                            Delivery Charges: Rs. <span id="deliveryCharges">200</span><br>
-                            Net Amount: Rs. <span id="netAmount">{{(intval($total) + intval(200))}}</span></p>
-                            
+                                Delivery Charges: Rs. <span id="deliveryCharges">200</span><br>
+                                Net Amount: Rs. <span id="netAmount">{{(intval($total) + intval(200))}}</span></p>
+
                         </div>
                     </div>
                 </div>
@@ -119,7 +130,8 @@
         background: #63a5ee;
         border-color: #63a5ee;
     }
-    .fs-m{
+
+    .fs-m {
         font-size: medium;
     }
 </style>
@@ -192,35 +204,37 @@
         grossAmnt = 0;
         netAmnt = 0;
         totalQty = 0;
-        $.each(ids,function(k,v){
+        $.each(ids, function(k, v) {
             console.log(v);
-            console.log($('#prc_pid'+v).text());
-            console.log($('#qty_pid'+v).val());
-            prc = $('#prc_pid'+v).text();
-            qty = $('#qty_pid'+v).val();
-            totalPrc = ( parseInt(prc) * parseInt(qty) );
+            console.log($('#prc_pid' + v).text());
+            console.log($('#qty_pid' + v).val());
+            prc = $('#prc_pid' + v).text();
+            qty = $('#qty_pid' + v).val();
+            totalPrc = (parseInt(prc) * parseInt(qty));
             totalQty += parseInt(qty);
             grossAmnt += totalPrc;
         });
         setTimeout(() => {
             $('#totalCharges').text(grossAmnt);
-            if(totalQty <= 2)
-            $('#deliveryCharges').text(125);
-            else if(totalQty > 2 && totalQty <= 5)
-            $('#deliveryCharges').text(250);
-            else if(totalQty > 5 && totalQty <= 10)
-            $('#deliveryCharges').text(500);
-            else if(totalQty > 10 && totalQty <= 15)
-            $('#deliveryCharges').text(750);
-            else if(totalQty > 15 && totalQty <= 20)
-            $('#deliveryCharges').text(1000);
-            else if(totalQty > 20 && totalQty <= 25)
-            $('#deliveryCharges').text(1250);
+            if (totalQty <= 2)
+                $('#deliveryCharges').text(125);
+            else if (totalQty > 2 && totalQty <= 5)
+                $('#deliveryCharges').text(250);
+            else if (totalQty > 5 && totalQty <= 10)
+                $('#deliveryCharges').text(500);
+            else if (totalQty > 10 && totalQty <= 15)
+                $('#deliveryCharges').text(750);
+            else if (totalQty > 15 && totalQty <= 20)
+                $('#deliveryCharges').text(1000);
+            else if (totalQty > 20 && totalQty <= 25)
+                $('#deliveryCharges').text(1250);
+            else if (totalQty > 25 && totalQty <= 30)
+                $('#deliveryCharges').text(1500);
 
             setTimeout(() => {
                 netAmnt = grossAmnt + parseInt($('#deliveryCharges').text());
                 $('#netAmount').text(netAmnt);
-            },300);
+            }, 300);
         }, 400);
 
     });

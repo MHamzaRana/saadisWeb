@@ -49,4 +49,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected $with = [
+        'orders'
+    ];
+    public function orders(){
+        return $this->hasMany('App\Models\Orders', 'user_id', 'id');
+    }
 }

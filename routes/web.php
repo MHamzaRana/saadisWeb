@@ -22,3 +22,4 @@ Route::get('/explore/alaaya', [HomeController::class, 'alaaya'])->name('alaaya')
 Route::get('/explore/all-collections', [HomeController::class, 'allCollection'])->name('all-collections');
 Route::get('/cart', [OrderController::class, 'cart'])->name('cart');
 Route::post('/place-order', [OrderController::class, 'store'])->name('place-order');
+Route::get('/order-success', [OrderController::class, 'success'])->name('order-success');

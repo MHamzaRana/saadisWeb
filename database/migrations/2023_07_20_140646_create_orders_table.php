@@ -24,14 +24,15 @@ class CreateOrdersTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('city');
             $table->string('country');
+            $table->string('key', 10)->nullable();
             $table->enum('type',['cod', 'pickup', 'online_paid'])->default('cod');
             $table->enum('status',['pending', 'processing', 'approved', 'packed',
             'delivered', 'completed', 'cancelled', 'rejected', 'spam', 'blocked'])->default('pending');
             $table->enum('courier', ['call_courier', 'rider_logistics', 'local'])->default('call_courier');
-            $table->string('courier_status');
+            $table->string('courier_status')->nullable();
             $table->string('tracking')->nullable();
             $table->string('batch')->nullable();
-            $table->string('price');
+            $table->string('price')->comment('Inclusive of delivery charges');
             $table->string('delivery_charges')->nullable();
             $table->string('tax')->nullable();
             $table->string('qty')->default('1');
