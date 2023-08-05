@@ -17,9 +17,9 @@ class CreateInventoriesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('product_id');
             $table->integer('qty')->default(0);
-            $table->integer('min')->default('1');
-            $table->string('received')->default('0');
-            $table->string('shipped')->default('0');
+            $table->integer('min')->default(1);
+            $table->integer('received')->default(0);
+            $table->integer('shipped')->default(0);
             $table->timestamps();
             $table->foreign('product_id')->references('id')->on('products');
         });

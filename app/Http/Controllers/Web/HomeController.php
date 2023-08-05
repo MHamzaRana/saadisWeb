@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\Inventory;
 use App\Models\Web\Home;
 use App\Models\Product;
 use Carbon\Carbon;
@@ -39,34 +40,39 @@ class HomeController extends Controller
         $search = $request->input('search');
         switch ($item) {
             case 'all-collections':
-                if($search)
-                $products = Product::where('status',"publish")->where('name','LIKE',"%{$search}%")->orderBy('id', 'desc')->paginate(20);
+                if ($search)
+                    $products = Product::where('status', "publish")->where('name', 'LIKE', "%{$search}%")->orderBy('id', 'desc')->paginate(20);
                 else
-                $products = Product::where('status',"publish")->orderBy('id', 'desc')->paginate(20);
+                    $products = Product::where('status', "publish")->orderBy('id', 'desc')->paginate(20);
 
                 $banner = asset('theme/images/all-collections.jpg');
                 $title = 'All Collections';
                 break;
 
             case 'bin-saeed':
-                $products = Product::where('status',"publish")->where('brand', 'Bin Saeed')->orderBy('id','desc')->paginate(20);
+                $products = Product::where('status', "publish")->where('brand', 'Bin Saeed')->orderBy('id', 'desc')->paginate(20);
                 $banner = asset('theme/images/bin-saeed-01.png');
                 $title = 'Bin Saeed';
                 break;
             case 'alaaya':
-                $products = Product::where('status',"publish")->where('brand', 'Alaaya')->orderBy('id','desc')->paginate(20);
+                $products = Product::where('status', "publish")->where('brand', 'Alaaya')->orderBy('id', 'desc')->paginate(20);
                 $banner = asset('theme/images/alaaya.jpg');
                 $title = 'Alaaya';
                 break;
             case 'today-deal':
-                $products = Product::where('status',"publish")->where('created_at', Carbon::now()->toDateTimeString())->orderBy('id','desc')->paginate(20);
+                $products = Product::where('status', "publish")->where('created_at', Carbon::now()->toDateTimeString())->orderBy('id', 'desc')->paginate(20);
                 $banner = asset('theme/images/alaaya.jpg');
                 $title = 'Today`s Deal';
                 break;
-                
+            case 'best-seller':
+                $products = Inventory::where('qty', '!=', 0)->with(['product'])->orderBy('shipped', 'desc')->paginate(20);
+                $banner = asset('theme/images/new-arrival.jpg');
+                $title = 'Best Seller';
+                break;
+
             default:
-                $products = Product::where('status',"publish")->where('created_at', '>=', Carbon::now()->subDays(5)->toDateTimeString())
-                ->orderBy('id', 'desc')->paginate(20);
+                $products = Product::where('status', "publish")->where('created_at', '>=', Carbon::now()->subDays(5)->toDateTimeString())
+                    ->orderBy('id', 'desc')->paginate(20);
                 $banner = asset('theme/images/new-arrival.jpg');
                 $title = 'New Arrival';
                 break;
@@ -77,7 +83,7 @@ class HomeController extends Controller
         return view('web.pages.explore', ['products' => $products, 'banner' => $banner, 'title' => $title]);
     }
 
-   
+
     /**
      * Show the form for creating a new resource.
      *

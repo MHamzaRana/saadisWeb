@@ -72,9 +72,18 @@
                     @foreach($products as $new)
                     <div class="card mt-4">
                         <div class="card-body">
-                            <img class="col-md-4 card-img float-left prod-card-img" src="{{env('ADMIN_URL') .'/uploads/images/products/'. $new->images[0]->path}}">
-                            <h5 class="card-title">{{$new->name}}</h5>
-                            <p class="card-text">Price: Rs. <span id="prc_pid{{($new->id)}}">{{$new->price}}</span></p>
+                            <div class="row">
+                                <img class="col-md-4 card-img float-left prod-card-img" src="{{env('ADMIN_URL') .'/uploads/images/products/'. $new->images[0]->path}}">
+                                <div class="col-md-8">
+                                    <h5 class="card-title">{{$new->name}}</h5>
+                                    <p>Price: Rs. <span id="prc_pid{{($new->id)}}">{{$new->price}}</span></p>
+                                </div>
+                                <a class="cursor-pointer rmBtnMobile" onclick="removeFromCart('{{$new->id}}');removeme(this,'{{$new->id}}');">
+                                    <i class="fa fa-2x fa-times"></i>
+                                </a>
+                            </div>
+
+
                             @if($new->inventory && intval($new->inventory->qty) > 0)
                             @php $total += intval($new->price); array_push($ids,$new->id); @endphp
                             <div class="offset-md-8 col-md-4">
@@ -105,8 +114,8 @@
                         <div class="card-body">
                             <h3 class="card-title p-0">Total</h3>
                             <p class="card-text">Price: Rs. <span id="totalCharges">{{$total}}</span><br>
-                                Delivery Charges: Rs. <span id="deliveryCharges">200</span><br>
-                                Net Amount: Rs. <span id="netAmount">{{(intval($total) + intval(200))}}</span></p>
+                                Delivery Charges: Rs. <span id="deliveryCharges">0</span><br>
+                                Net Amount: Rs. <span id="netAmount">{{(intval($total) + intval(0))}}</span></p>
 
                         </div>
                     </div>
@@ -123,7 +132,7 @@
     .prod-card-img {
         padding: 0 10px 0 0;
         max-height: 150px;
-        object-fit: cover;
+        object-fit: contain;
     }
 
     .bg-theme {
@@ -134,6 +143,19 @@
     .fs-m {
         font-size: medium;
     }
+
+    p {
+        margin: 5px;
+    }
+
+    .rmBtnMobile {
+        position: absolute;
+        top: 0;
+        right: 12px;
+        color: #dc3545 !important;
+    }
+
+    @media only screen and (max-width: 767px) {}
 </style>
 @endpush
 
@@ -279,6 +301,19 @@
 
     })
     // From JS end
+    function removeme(e, id) {
+        $(e).parent().parent().parent().remove();
+        // Construct URLSearchParams object instance from current URL querystring.
+        var queryParams = new URLSearchParams(window.location.search);
+
+        // Set new or modify existing parameter value. 
+        queryParams.set("items", localStorage.getItem('items'));
+
+        // Replace current querystring with the new one.
+        history.replaceState(null, null, "?" + queryParams.toString());
+
+        $('#CartInstantView').hide();
+    }
 </script>
 @endpush
 

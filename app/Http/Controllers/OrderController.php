@@ -66,16 +66,17 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        // dd(Order::all());
+        // dd($request->all());
         $validator = Validator::make($request->all(), [
             "name" => "required|min:2",
             "phone" => "required|min:7",
             "secondary_phone" => "string|nullable|min:7",
             "items" => "string|required",
-            "shipment_address" => "numeric|nullable|min:3",
+            "shipment_address" => "string|min:10",
             "city" => "string",
             "country" => "string",
-            "qty" => "array|requied|min:1",
+            "qty" => "array|required|min:1",
 
         ]);
         if ($validator->fails()) {
@@ -91,12 +92,14 @@ class OrderController extends Controller
         $quantity = $request->input('qty');
         $user = User::where('phone', $phone)->first();
         $ids = [];
-        foreach ($items as $id => $qty) {
-            array_push($ids, substr($id, 3));
-        }
-        $products = Product::whereIn('id', $ids)->get();
+        
         DB::beginTransaction();
         try {
+            // $items = json_decode($items);
+            foreach ($quantity as $id => $qty) {
+                array_push($ids, substr($id, 3));
+            }
+            $products = Product::whereIn('id', $ids)->get();
             if (!$user) {
                 $user = new User();
                 $user->type = 'customer';
@@ -130,7 +133,6 @@ class OrderController extends Controller
                 if ($product->inventory && intval($product->inventory->qty) > 0) {
                     $productInventory = intval($product->inventory->qty);
                     $orderedQty = intval($quantity['pid' . $product->id]);
-
                     $orderProduct = new OrderProduct();
                     $orderProduct->product_id = $product->id;
                     $orderProduct->order_id = $order->id;
@@ -138,7 +140,7 @@ class OrderController extends Controller
                         $orderProduct->qty = $orderedQty;
                         $updatedQty = $productInventory - $orderedQty;
                         $shipped = intval($product->inventory->shipped) + $orderedQty;
-                        $product->inventory->save(
+                        $product->inventory->update(
                             [
                                 'qty' => $updatedQty,
                                 'shipped' => $shipped
@@ -151,7 +153,7 @@ class OrderController extends Controller
                         $orderProduct->qty = $productInventory;
                         $updatedQty = 0; // $productInventory - $productInventory
                         $shipped = intval($product->inventory->shipped) + $productInventory;
-                        $product->inventory->save(
+                        $product->inventory->update(
                             [
                                 'qty' => $updatedQty,
                                 'shipped' => $shipped
@@ -188,7 +190,8 @@ class OrderController extends Controller
             DB::rollback();
             return redirect()->back()->withErrors($ex->getMessage());
         }
-        return view('pages.web.order-success', ['order' => $order]);
+        $order = Order::find($order->id)->with(['orderProducts'])->first();
+        return view('web.pages.order-success', ['order' => $order]);
     }
 
     /**
@@ -199,7 +202,8 @@ class OrderController extends Controller
      */
     public function success(Request $request)
     {
-        return view('web.pages.order-success');
+        $order = Order::find(13)->with(['orderProducts'])->first();
+        return view('web.pages.order-success', ['order' => $order]);
     }
 
 

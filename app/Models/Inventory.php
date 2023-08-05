@@ -8,4 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Inventory extends Model
 {
     use HasFactory;
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'product_id',
+        'qty',
+        'min',
+        'received',
+        'shipped'
+    ];
+
+    public function product(){
+        return $this->hasOne('App\Models\Product', 'id', 'product_id');
+    }
 }

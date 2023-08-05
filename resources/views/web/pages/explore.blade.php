@@ -13,6 +13,9 @@
                     <div class="fashion_section_2">
                         <div class="row">
                             @foreach($products as $new)
+                            @php if($title == 'Best Seller'){
+                                $new = $new->product;
+                            } @endphp
                             <div class="col-lg-4 col-sm-6">
                                 <div class="box_main">
                                     <h4 class="shirt_text">{{$new->name}}</h4>

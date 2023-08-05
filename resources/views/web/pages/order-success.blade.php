@@ -5,7 +5,7 @@
 <style>
     body {
         text-align: center;
-        padding: 40px 0;
+        /* padding: 40px 0; */
         background: #EBF0F5;
     }
 
@@ -59,17 +59,67 @@
     <h1>Success</h1>
     <p>Your order has been placed successfully!<br /> Below is the order summary.<br>Take a screenshot or download.</p>
 </div>
-<div class="row">
+<div class="row mb-5">
     <div class="col-md-8 offset-md-2">
-        <div class="card mb-5">
-            <table class="table table-responsive">
-                <thead>
+        <div class="card">
+            <h2>Order Summary</h2>
+            <p class="mb-3">* Order is placed with available items and respective quantities.</p>
+            <hr>
+            <div class="form-row">
+                <span for="name">Name:</span>
+                <input class="form-control border-less-field" readonly type="text" value="{{$order->name}}">
+            </div>
 
-                </thead>
-                <tbody>
+            <div class="form-row">
+                <span for="name">Phone:</span>
+                <input class="form-control border-less-field" readonly type="text" value="{{$order->phone}}">
+            </div>
 
-                </tbody>
-            </table>
+            <div class="form-row">
+                <span for="name">Shipment Address:</span>
+                <input class="form-control border-less-field" readonly type="text" value="{{$order->shipment_address}}">
+            </div>
+            <hr>
+            <div class="form-row mt-3 mb-3">
+                <strong class="col-md-3 bold">Total Items Price:</strong>
+                <strong class="col-md-3">Rs. {{intval($order->price) - intval($order->delivery_charges)}}/-</strong>
+                <strong class="col-md-3">Delivery Charges:</strong>
+                <strong class="col-md-3">Rs. {{$order->delivery_charges}}/-</strong>
+                <strong class="col-md-3 bg-primary text-white p-1">Total:</strong>
+                <strong class="col-md-3 bg-primary text-white p-1">Rs. {{$order->price}}/-</strong>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped w-100">
+                    <thead>
+                        <tr>
+                            <th>
+                                Item
+                            </th>
+                            <th>
+                                Quantity
+                            </th>
+                            <th>
+                                Price
+                            </th>
+                            <th>
+                                Total
+                            </th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        @foreach($order->orderProducts as $item)
+                        <tr>
+                            <td>{{$item->product->name}}</td>
+                            <td>{{$item->qty}}</td>
+                            <td>{{$item->product->price}}</td>
+                            <td>{{intval($item->product->price) * intval($item->qty)}}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+
         </div>
     </div>
 </div>

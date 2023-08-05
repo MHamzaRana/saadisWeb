@@ -8,11 +8,11 @@
       </div>
       <div class="footer_menu">
          <ul>
-            <li><a href="#">Best Sellers</a></li>
-            <li><a href="#">Gift Ideas</a></li>
+            <li><a href="{{route('explore','best-seller')}}">Best Sellers</a></li>
+            <li><a href="{{route('explore','all-collections')}}">All Collections</a></li>
             <li><a href="{{route('explore','new-arrival')}}">New Arrival</a></li>
             <li><a href="{{route('explore','today-deal')}}">Today's Deals</a></li>
-            <li><a href="#">Customer Service</a></li>
+            <li><a href="{{route('customer-service')}}">Customer Service</a></li>
          </ul>
       </div>
       <div class="location_main">Help Line Number : <a href="#">+92 303 5528 404</a></div>
