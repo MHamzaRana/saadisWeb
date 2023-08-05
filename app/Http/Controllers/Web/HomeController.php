@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Inventory;
 use App\Models\Web\Home;
 use App\Models\Product;
+use App\Models\City;
+use App\Models\Country;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 // use iterable;
@@ -83,7 +85,16 @@ class HomeController extends Controller
         return view('web.pages.explore', ['products' => $products, 'banner' => $banner, 'title' => $title]);
     }
 
-
+    public function customerService() {
+        $cities = City::all();
+        $countries = Country::all();
+        $banner = asset('theme/images/banner.png');
+        return view('web.pages.customer-service', [
+            'banner' => $banner,
+            'cities' => $cities,
+            'countries' => $countries
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -100,9 +111,10 @@ class HomeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeCMsg(Request $request)
     {
-        //
+        // dd($request->all());
+        return redirect()->route('customer-service')->with('success', 'Your querry has been submitted successfully.');
     }
 
     /**

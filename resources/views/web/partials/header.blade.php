@@ -7,6 +7,7 @@
                 <div class="col-sm-12">
                     <div class="custom_menu">
                         <ul>
+                            <li><a href="{{route('home')}}"><i class="fa fa-home"></i></a></li>
                             <li><a href="{{route('explore','best-seller')}}">Best Sellers</a></li>
                             <li><a href="{{route('explore','all-collections')}}">All Collections</a></li>
                             <li><a href="{{route('explore','new-arrival')}}">New Arrival</a></li>

@@ -60,7 +60,10 @@
                         <label for="userAddress">Address *</label>
                         <input type="text" class="form-control" id="userAddress" name="shipment_address" placeholder="1234 Main St">
                     </div>
-                    <button type="submit" class="btn btn-primary bg-theme mt-4 w-100">Place Order</button>
+                    <button type="submit" id="submitBtn" class="btn btn-primary bg-theme mt-4 w-100">Place Order</button>
+                    <span id="loadingBtn" class="btn btn-primary bg-theme mt-4 w-100" style="display: none;">
+                        <i class="fa fa-spinner fa-spin"></i>
+                    </span>
 
                 </div>
                 @php
@@ -279,6 +282,8 @@
     let checked = false;
     // From JS
     $('#cartForm').on('submit', function(e) {
+        $('#submitBtn').hide();
+        $('#loadingBtn').show();
         if (!checked) {
             e.preventDefault();
             if ($('#userName').val() && $('#userPhone').val() && $('#userAddress').val()) {
@@ -294,6 +299,8 @@
                     $(e.target).submit();
                 }, 500);
             } else {
+                $('#submitBtn').show();
+                $('#loadingBtn').hide();
                 alert('Name, Phone, City, Country and Address are required. Please fill into all required fields.');
             }
         }
