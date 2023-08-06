@@ -37,7 +37,7 @@
             <div class="containt_main">
                 <div id="mySidenav" class="sidenav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <a href="index.html">Home</a>
+                    <a href="{{route('home')}}">Home</a>
                     <a href="{{route('explore','new-arrival')}}">New Arrival</a>
                     <a href="{{route('explore','bin-saeed')}}">Bin Saeed</a>
                     <a href="{{route('explore','alaaya')}}">Aalaya</a>
