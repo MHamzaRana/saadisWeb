@@ -38,8 +38,8 @@
                     <div class="form-group">
                         <label for="userCountry">Country *</label>
                         <select class="form-control" id="userCountry" name="country">
+                            <option value="">Select country</option>
                             <option value="Pakistan">Pakistan</option>
-                            <option value="Saudia">Saudia</option>
                             @foreach($countries as $country)
                             <option value="{{$country->name}}">{{$country->name}}</option>
                             @endforeach
@@ -48,8 +48,8 @@
                     <div class="form-group">
                         <label for="userCity">City *</label>
                         <select class="form-control" id="userCity" name="city">
+                            <option value="">Select city</option>
                             <option value="Lahore">Lahore</option>
-                            <option value="Karachi">Karachi</option>
                             @foreach($cities as $city)
                             <option value="{{$city->name}}">{{$city->name}}</option>
                             @endforeach
