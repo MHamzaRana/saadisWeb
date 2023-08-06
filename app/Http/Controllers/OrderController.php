@@ -82,11 +82,11 @@ class OrderController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator->errors());
         }
-        $name = $request->input('name');
+        $name = strip_tags($request->input('name'));
         $phone = $request->input('phone');
         $secondary_phone = $request->input('secondary_phone');
         $items = $request->input('items');
-        $shipment_address = $request->input('shipment_address');
+        $shipment_address = strip_tags($request->input('shipment_address'));
         $city = $request->input('city');
         $country = $request->input('country');
         $quantity = $request->input('qty');

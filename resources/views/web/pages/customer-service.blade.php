@@ -57,8 +57,7 @@
                     </div>
                     <div class="form-group">
                         <label for="userMessage">Message *</label>
-                        <textarea class="form-control" id="userMessage" name="message">
-                        </textarea>
+                        <textarea class="form-control" id="userMessage" name="message"></textarea>
                     </div>
                     <button type="submit" id="submitBtn" class="btn btn-primary bg-theme mt-4 w-100">Submit</button>
                     <span id="loadingBtn" class="btn btn-primary bg-theme mt-4 w-100" style="display: none;">

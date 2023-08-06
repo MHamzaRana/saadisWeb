@@ -8,8 +8,12 @@ use App\Models\Web\Home;
 use App\Models\Product;
 use App\Models\City;
 use App\Models\Country;
+use App\Models\Message;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\MessageBag;
 // use iterable;
 use Symfony\Component\Console\Input\Input;
 
@@ -114,6 +118,48 @@ class HomeController extends Controller
     public function storeCMsg(Request $request)
     {
         // dd($request->all());
+        $validator = Validator::make($request->all(), [
+            "name" => "required|min:2",
+            "phone" => "required|min:7",
+            "secondary_phone" => "string|nullable|min:7",
+            "message" => "string|min:10|max:256",
+            "city" => "string",
+            "country" => "string"
+
+        ]);
+        if ($validator->fails()) {
+            // dd($validator->errors());
+            return redirect()->back()->withErrors($validator->errors());
+        }
+        $name = strip_tags($request->input('name'));
+        $phone = $request->input('phone');
+        $secondary_phone = $request->input('secondary_phone');
+        $messageString = strip_tags($request->input('message'));
+        $city = $request->input('city');
+        $country = $request->input('country');
+        $client_ip = $request->ip();
+        $last_entry = Message::where('client_ip',$client_ip)->where('created_at', '>', date('Y-m-d H:i:s', strtotime('-1 hour')))->first();
+        if($last_entry){
+            $msgBag = new MessageBag();
+            $msgBag->add('time','You already have submitted a query within last hour.');
+            return redirect()->back()->withErrors($msgBag);
+        }
+        DB::beginTransaction();
+        try {
+            $message = new Message();
+            $message->name = $name;
+            $message->phone = $phone;
+            $message->secondary_phone = $secondary_phone;
+            $message->message = $messageString;
+            $message->city = $city;
+            $message->country = $country;
+            $message->client_ip = $client_ip;
+            $message->save();
+            DB::commit();
+        } catch (\Exception $ex) {
+            DB::rollback();
+            return redirect()->back()->withErrors($ex->getMessage());
+        }
         return redirect()->route('customer-service')->with('success', 'Your querry has been submitted successfully.');
     }
 
