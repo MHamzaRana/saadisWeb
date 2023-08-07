@@ -65,7 +65,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <iframe width="100%" height="600" class="prod-video" id="prodVideoLink" src="https://www.youtube.com/embed/HyQWr89JVEg" sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation">
+                <iframe width="100%" height="600" class="prod-video" id="prodVideoLink" src="" sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation">
                 </iframe>
             </div>
         </div>
