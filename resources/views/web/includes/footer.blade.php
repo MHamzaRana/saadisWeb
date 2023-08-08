@@ -51,7 +51,7 @@
 <!-- sidebar -->
 <script src="{{asset('theme/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
 <script src="{{asset('theme/js/custom.js')}}"></script>
-<script src="{{asset('js/custom.js?n=0.1')}}"></script>
+<script src="{{asset('js/custom.js')}}"></script>
 <script>
    function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
