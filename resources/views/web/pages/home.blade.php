@@ -19,34 +19,37 @@
                                     <p class="price_text">Price <s style="color: #969696;">Rs. {{$new->st_price}}</s><br><span style="color: #262626;"> Rs. {{$new->price}}</span></p>
                                     <div class="tshirt_img">
                                         <img class="product-img" src="{{env('ADMIN_URL') .'/uploads/images/products/'. $new->images[0]->path}}">
-                                        <img class="play-button" onclick="playVideo('{{$new->video[0]->url}}?autoplay=1');" data-url="{{$new->video[0]->url}}" 
-                                        src="{{asset('theme/images/play-button.png')}}" data-toggle="modal" data-target=".video-modal-lg">
+                                        <img class="play-button" onclick="playVideo('{{$new->video[0]->url}}?autoplay=1');" data-url="{{$new->video[0]->url}}" src="{{asset('theme/images/play-button.png')}}" data-toggle="modal" data-target=".video-modal-lg">
 
                                         <!-- <iframe width="100%" height="500" src="https://www.youtube.com/embed/HyQWr89JVEg"
                                             sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation">
                                         </iframe> -->
                                     </div>
                                     <div class="btn_main">
+                                        @if($new->inventory && $new->inventory->qty > 0)
                                         <div class="buy_bt btn btn-default cart_add" data-id="{{$new->id}}"><a onclick="addToCart('{{$new->id}}');">Add <i class="fa fa-shopping-cart"></i></a></div>
                                         <div class="buy_bt btn btn-default cart_remove" data-id="{{$new->id}}" style="display: none;"><a onclick="removeFromCart('{{$new->id}}');">Remove <i class="fa fa-shopping-cart"></i></a></div>
                                         <!-- <div class="seemore_bt"><a href="#">See More</a></div> -->
+                                        @else
+                                        <div class="buy_bt btn btn-default fw-bold">Sold out</div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
                             @endforeach
-                            
+
                         </div>
                     </div>
                 </div>
             </div>
-            
+
         </div>
         <div class="loadMore">
-        <a  href="{{route('explore','new-arrival')}}">
-           <span>More</span> <i class="fa fa-angle-down"></i>
-        </a>
+            <a href="{{route('explore','new-arrival')}}">
+                <i class="fa fa-hand-pointer-o"></i><span class="loadMoreText"> Click To See More Items </span><i class="fa fa-angle-down"></i>
+            </a>
         </div>
-       
+
         <!-- <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
             <i class="fa fa-angle-right"></i>
         </a> -->
@@ -63,24 +66,27 @@
                     <h1 class="fashion_taital">Bin Saeed</h1>
                     <div class="fashion_section_2">
                         <div class="row">
-                        @foreach($binSaeed as $BSitem)
+                            @foreach($binSaeed as $BSitem)
                             <div class="col-lg-4 col-sm-6">
                                 <div class="box_main">
                                     <h4 class="shirt_text">{{$BSitem->name}}</h4>
                                     <p class="price_text">Price <s style="color: #969696;">Rs. {{$BSitem->st_price}}</s><br><span style="color: #262626;"> Rs. {{$BSitem->price}}</span></p>
                                     <div class="tshirt_img">
                                         <img class="product-img" src="{{env('ADMIN_URL') .'/uploads/images/products/'. $BSitem->images[0]->path}}">
-                                        <img class="play-button" onclick="playVideo('{{$BSitem->video[0]->url}}?autoplay=1');" data-url="{{$BSitem->video[0]->url}}" 
-                                        src="{{asset('theme/images/play-button.png')}}" data-toggle="modal" data-target=".video-modal-lg">
+                                        <img class="play-button" onclick="playVideo('{{$BSitem->video[0]->url}}?autoplay=1');" data-url="{{$BSitem->video[0]->url}}" src="{{asset('theme/images/play-button.png')}}" data-toggle="modal" data-target=".video-modal-lg">
 
                                         <!-- <iframe width="100%" height="500" src="https://www.youtube.com/embed/HyQWr89JVEg"
                                             sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation">
                                         </iframe> -->
                                     </div>
                                     <div class="btn_main">
+                                        @if($BSitem->inventory && $BSitem->inventory->qty > 0)
                                         <div class="buy_bt btn btn-default cart_add" data-id="{{$BSitem->id}}"><a onclick="addToCart('{{$BSitem->id}}');">Add <i class="fa fa-shopping-cart"></i></a></div>
                                         <div class="buy_bt btn btn-default cart_remove" data-id="{{$BSitem->id}}" style="display: none;"><a onclick="removeFromCart('{{$BSitem->id}}');">Remove <i class="fa fa-shopping-cart"></i></a></div>
                                         <!-- <div class="seemore_bt"><a href="#">See More</a></div> -->
+                                        @else
+                                        <div class="buy_bt btn btn-default fw-bold">Sold out</div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -92,9 +98,9 @@
         </div>
 
         <div class="loadMore">
-        <a  href="{{route('explore','bin-saeed')}}">
-           <span>More</span> <i class="fa fa-angle-down"></i>
-        </a>
+            <a href="{{route('explore','bin-saeed')}}">
+            <i class="fa fa-hand-pointer-o"></i><span class="loadMoreText"> Click To See More Items </span><i class="fa fa-angle-down"></i>
+            </a>
         </div>
         <!-- <a class="carousel-control-prev" href="#electronic_main_slider" role="button" data-slide="prev">
             <i class="fa fa-angle-left"></i>
@@ -114,24 +120,27 @@
                     <h1 class="fashion_taital">Alaaya</h1>
                     <div class="fashion_section_2">
                         <div class="row">
-                        @foreach($alaaya as $ALitem)
+                            @foreach($alaaya as $ALitem)
                             <div class="col-lg-4 col-sm-6">
                                 <div class="box_main">
                                     <h4 class="shirt_text">{{$ALitem->name}}</h4>
                                     <p class="price_text">Price <s style="color: #969696;">Rs. {{$ALitem->st_price}}</s><br><span style="color: #262626;"> Rs. {{$ALitem->price}}</span></p>
                                     <div class="tshirt_img">
                                         <img class="product-img" src="{{env('ADMIN_URL') .'/uploads/images/products/'. $ALitem->images[0]->path}}">
-                                        <img class="play-button" onclick="playVideo('{{$ALitem->video[0]->url}}?autoplay=1');" data-url="{{$ALitem->video[0]->url}}" 
-                                        src="{{asset('theme/images/play-button.png')}}" data-toggle="modal" data-target=".video-modal-lg">
+                                        <img class="play-button" onclick="playVideo('{{$ALitem->video[0]->url}}?autoplay=1');" data-url="{{$ALitem->video[0]->url}}" src="{{asset('theme/images/play-button.png')}}" data-toggle="modal" data-target=".video-modal-lg">
 
                                         <!-- <iframe width="100%" height="500" src="https://www.youtube.com/embed/HyQWr89JVEg"
                                             sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation">
                                         </iframe> -->
                                     </div>
                                     <div class="btn_main">
+                                        @if($ALitem->inventory && $ALitem->inventory->qty > 0)
                                         <div class="buy_bt btn btn-default cart_add" data-id="{{$ALitem->id}}"><a onclick="addToCart('{{$ALitem->id}}');">Add <i class="fa fa-shopping-cart"></i></a></div>
                                         <div class="buy_bt btn btn-default cart_remove" data-id="{{$ALitem->id}}" style="display: none;"><a onclick="removeFromCart('{{$ALitem->id}}');">Remove <i class="fa fa-shopping-cart"></i></a></div>
                                         <!-- <div class="seemore_bt"><a href="#">See More</a></div> -->
+                                        @else
+                                        <div class="buy_bt btn btn-default fw-bold">Sold out</div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -140,13 +149,13 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
 
         <div class="loadMore">
-        <a  href="{{route('explore','alaaya')}}">
-           <span>More</span> <i class="fa fa-angle-down"></i>
-        </a>
+            <a href="{{route('explore','alaaya')}}">
+            <i class="fa fa-hand-pointer-o"></i><span class="loadMoreText"> Click To See More Items </span><i class="fa fa-angle-down"></i>
+            </a>
         </div>
         <!-- <a class="carousel-control-prev" href="#jewellery_main_slider" role="button" data-slide="prev">
             <i class="fa fa-angle-left"></i>
@@ -178,5 +187,13 @@
         </div>
     </div>
 </div>
+@endpush
+
+@push('styles')
+<style>
+    .fw-bold {
+        font-weight: bold;
+    }
+</style>
 @endpush
 @endsection

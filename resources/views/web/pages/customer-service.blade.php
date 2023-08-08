@@ -81,8 +81,8 @@
     }
 
     .bg-theme {
-        background: #63a5ee;
-        border-color: #63a5ee;
+        background: #64a7ee;
+        border-color: #64a7ee;
     }
 
     .fs-m {

@@ -10,7 +10,7 @@
     }
 
     h1 {
-        color: #63a5ee;
+        color: #64a7ee;
         font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
         font-weight: 900;
         font-size: 40px;
@@ -25,7 +25,7 @@
     }
 
     .checkDiv>i {
-        color: #63a5ee;
+        color: #64a7ee;
         font-size: 100px;
         line-height: 200px;
         margin-left: -15px;
@@ -46,7 +46,7 @@
     }
 
     .home a {
-        color: #63a5ee;
+        color: #64a7ee;
     }
 </style>
 @endpush

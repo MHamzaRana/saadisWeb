@@ -60,7 +60,7 @@
                         
                         <input type="text" name="search" class="form-control" placeholder="Search" id="searchInput">
                         <div class="input-group-append">
-                            <button class="btn btn-secondary" type="button" onclick="$('#searchForm').submit();" style="background-color: #63a5ee; border-color:#63a5ee ">
+                            <button class="btn btn-secondary" type="button" onclick="$('#searchForm').submit();" style="background-color: #64a7ee; border-color:#64a7ee ">
                                 <i class="fa fa-search"></i>
                             </button>
                         </div>

@@ -508,7 +508,7 @@ a:hover {
     font-size: 16px;
     color: #ffffff;
     /* background-color: #252525; */
-    background-color: #63a5ee;
+    background-color: #64a7ee;
     text-align: center;
     padding: 10px 0px;
     border-radius: 5px;
@@ -597,7 +597,7 @@ a:hover {
 .price_text {
     width: 100%;
     font-size: 16px;
-    /* color: #63a5ee; */
+    /* color: #64a7ee; */
     color: #f26522;
     text-align: center;
     margin: 0px;
@@ -668,7 +668,7 @@ a:hover {
     width: 55px;
     height: 55px;
     /* background-color: #30302e; */
-    background-color: #63a5ee;
+    background-color: #64a7ee;
     opacity: 1;
     font-size: 30px;
     color: #ffffff;
@@ -710,7 +710,7 @@ a:hover {
     width: 55px;
     height: 55px;
     /* background-color: #30302e; */
-    background-color: #63a5ee;
+    background-color: #64a7ee;
     opacity: 1;
     font-size: 30px;
     color: #ffffff;
@@ -758,7 +758,7 @@ a:hover {
     width: 55px;
     height: 55px;
     /* background-color: #30302e; */
-    background-color: #63a5ee;
+    background-color: #64a7ee;
     opacity: 1;
     font-size: 30px;
     color: #ffffff;
@@ -786,10 +786,10 @@ a:hover {
     border-radius: 50%;
     border-top: 16px solid #414744;
     border-right: 16px solid #f26522;
-    /* border-right: 16px solid #63a5ee; */
+    /* border-right: 16px solid #64a7ee; */
     border-bottom: 16px solid #414744;
     border-left: 16px solid #f26522;
-    /* border-left: 16px solid #63a5ee; */
+    /* border-left: 16px solid #64a7ee; */
     width: 120px;
     height: 120px;
     -webkit-animation: spin 2s linear infinite;
@@ -870,7 +870,7 @@ input.mail_bt::placeholder {
     float: right;
     font-size: 16px;
     /* color: #f26522; */
-    color: #63a5ee;
+    color: #64a7ee;
     background-color: transparent;
     padding: 20px 0px 5px 0px;
     border-radius: 30px;
@@ -881,7 +881,7 @@ input.mail_bt::placeholder {
 
 .subscribe_bt a {
     /* color: #f26522; */
-    color: #63a5ee;
+    color: #64a7ee;
 }
 
 .subscribe_bt a:hover {
