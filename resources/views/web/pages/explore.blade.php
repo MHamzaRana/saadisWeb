@@ -64,7 +64,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body text-center">
             <iframe width="267" height="476" class="prod-video" id="prodVideoLink" src="" 
                 sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation"
                 style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" 
