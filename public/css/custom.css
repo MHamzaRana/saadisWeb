@@ -7,7 +7,8 @@
     position: absolute;
     left: 42%;
     top: 47%;
-    background-color: #b3b3b3;
+    /* background-color: #b3b3b3; */
+    background-color: #64a7ee;
     border-radius: 50%;
     cursor: pointer;
 }
