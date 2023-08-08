@@ -169,9 +169,46 @@
         finalCartItems();
         $('#CartInstantView').hide();
         autoFillCartInfo();
+        calculatePriceDC();
     });
 
+    function calculatePriceDC() {
+        grossAmnt = 0;
+        netAmnt = 0;
+        totalQty = 0;
+        $.each(ids, function(k, v) {
+            console.log(v);
+            console.log($('#prc_pid' + v).text());
+            console.log($('#qty_pid' + v).val());
+            prc = $('#prc_pid' + v).text();
+            qty = $('#qty_pid' + v).val();
+            totalPrc = (parseInt(prc) * parseInt(qty));
+            totalQty += parseInt(qty);
+            grossAmnt += totalPrc;
+        });
+        setTimeout(() => {
+            $('#totalCharges').text(grossAmnt);
+            if (totalQty <= 2)
+                $('#deliveryCharges').text(125);
+            else if (totalQty > 2 && totalQty <= 5)
+                $('#deliveryCharges').text(250);
+            else if (totalQty > 5 && totalQty <= 10)
+                $('#deliveryCharges').text(500);
+            else if (totalQty > 10 && totalQty <= 15)
+                $('#deliveryCharges').text(750);
+            else if (totalQty > 15 && totalQty <= 20)
+                $('#deliveryCharges').text(1000);
+            else if (totalQty > 20 && totalQty <= 25)
+                $('#deliveryCharges').text(1250);
+            else if (totalQty > 25 && totalQty <= 30)
+                $('#deliveryCharges').text(1500);
 
+            setTimeout(() => {
+                netAmnt = grossAmnt + parseInt($('#deliveryCharges').text());
+                $('#netAmount').text(netAmnt);
+            }, 300);
+        }, 400);
+    }
     // Quantity JS started
     $('.btn-number').click(function(e) {
         e.preventDefault();
@@ -226,41 +263,7 @@
             alert('Sorry, the maximum value was reached');
             $(this).val($(this).data('oldValue'));
         }
-        grossAmnt = 0;
-        netAmnt = 0;
-        totalQty = 0;
-        $.each(ids, function(k, v) {
-            console.log(v);
-            console.log($('#prc_pid' + v).text());
-            console.log($('#qty_pid' + v).val());
-            prc = $('#prc_pid' + v).text();
-            qty = $('#qty_pid' + v).val();
-            totalPrc = (parseInt(prc) * parseInt(qty));
-            totalQty += parseInt(qty);
-            grossAmnt += totalPrc;
-        });
-        setTimeout(() => {
-            $('#totalCharges').text(grossAmnt);
-            if (totalQty <= 2)
-                $('#deliveryCharges').text(125);
-            else if (totalQty > 2 && totalQty <= 5)
-                $('#deliveryCharges').text(250);
-            else if (totalQty > 5 && totalQty <= 10)
-                $('#deliveryCharges').text(500);
-            else if (totalQty > 10 && totalQty <= 15)
-                $('#deliveryCharges').text(750);
-            else if (totalQty > 15 && totalQty <= 20)
-                $('#deliveryCharges').text(1000);
-            else if (totalQty > 20 && totalQty <= 25)
-                $('#deliveryCharges').text(1250);
-            else if (totalQty > 25 && totalQty <= 30)
-                $('#deliveryCharges').text(1500);
-
-            setTimeout(() => {
-                netAmnt = grossAmnt + parseInt($('#deliveryCharges').text());
-                $('#netAmount').text(netAmnt);
-            }, 300);
-        }, 400);
+        calculatePriceDC();
 
     });
     $(".input-number").keydown(function(e) {
