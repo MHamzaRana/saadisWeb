@@ -23,5 +23,5 @@ Route::get('/order-success', [OrderController::class, 'success'])->name('order-s
 Route::get('/customer-service', [HomeController::class, 'customerService'])->name('customer-service');
 Route::post('/customer-message', [HomeController::class, 'storeCMsg'])->name('customer-message');
 // Route::get('/explore/bin-saeed', [HomeController::class, 'binSaeed'])->name('bin-saeed');
-// Route::get('/explore/alaaya', [HomeController::class, 'alaaya'])->name('alaaya');
+// Route::get('/explore/aalaya', [HomeController::class, 'aalaya'])->name('aalaya');
 // Route::get('/explore/all-collections', [HomeController::class, 'allCollection'])->name('all-collections');

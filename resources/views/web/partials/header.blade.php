@@ -40,7 +40,7 @@
                     <a href="{{route('home')}}">Home</a>
                     <a href="{{route('explore','new-arrival')}}">New Arrival</a>
                     <a href="{{route('explore','bin-saeed')}}">Bin Saeed</a>
-                    <a href="{{route('explore','alaaya')}}">Aalaya</a>
+                    <a href="{{route('explore','aalaya')}}">Aalaya</a>
                     <a href="{{route('explore','all-collections')}}">All Collections</a>
                 </div>
                 <span class="toggle_icon" onclick="openNav()"><img class="toggle-icon-img" src="{{asset('theme/images/toggle-icon.png')}}"></span>

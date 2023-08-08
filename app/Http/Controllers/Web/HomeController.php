@@ -28,11 +28,11 @@ class HomeController extends Controller
     {
         $newArrivals = Product::orderBy('id', 'desc')->limit(6)->get();
         $binSaeed = Product::where('brand', 'Bin Saeed')->orderBy('id', 'desc')->limit(6)->get();
-        $alaaya = Product::where('brand', 'Alaaya')->orderBy('id', 'desc')->limit(6)->get();
+        $aalaya = Product::where('brand', 'Aalaya')->orderBy('id', 'desc')->limit(6)->get();
         // dd($newArrivals);
         return view('web.pages.home', [
             'newArrivals' => $newArrivals, 'binSaeed' => $binSaeed,
-            'alaaya' => $alaaya
+            'aalaya' => $aalaya
         ]);
     }
 
@@ -60,14 +60,14 @@ class HomeController extends Controller
                 $banner = asset('theme/images/bin-saeed-01.png');
                 $title = 'Bin Saeed';
                 break;
-            case 'alaaya':
-                $products = Product::where('status', "publish")->where('brand', 'Alaaya')->orderBy('id', 'desc')->paginate(20);
-                $banner = asset('theme/images/alaaya.jpg');
-                $title = 'Alaaya';
+            case 'aalaya':
+                $products = Product::where('status', "publish")->where('brand', 'Aalaya')->orderBy('id', 'desc')->paginate(20);
+                $banner = asset('theme/images/aalaya.jpg');
+                $title = 'Aalaya';
                 break;
             case 'today-deal':
                 $products = Product::where('status', "publish")->where('created_at', Carbon::now()->toDateTimeString())->orderBy('id', 'desc')->paginate(20);
-                $banner = asset('theme/images/alaaya.jpg');
+                $banner = asset('theme/images/aalaya.jpg');
                 $title = 'Today`s Deal';
                 break;
             case 'best-seller':

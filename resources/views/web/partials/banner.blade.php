@@ -21,8 +21,8 @@
                 <div class="carousel-item">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h1 class="banner_taital">Get Start <br>With alaaya</h1>
-                            <div class="buynow_bt"><a href="{{route('explore','alaaya')}}">Buy Now</a></div>
+                            <h1 class="banner_taital">Get Start <br>With aalaya</h1>
+                            <div class="buynow_bt"><a href="{{route('explore','aalaya')}}">Buy Now</a></div>
                         </div>
                     </div>
                 </div>

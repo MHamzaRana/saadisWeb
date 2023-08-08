@@ -117,10 +117,10 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="container">
-                    <h1 class="fashion_taital">Alaaya</h1>
+                    <h1 class="fashion_taital">Aalaya</h1>
                     <div class="fashion_section_2">
                         <div class="row">
-                            @foreach($alaaya as $ALitem)
+                            @foreach($aalaya as $ALitem)
                             <div class="col-lg-4 col-sm-6">
                                 <div class="box_main">
                                     <h4 class="shirt_text">{{$ALitem->name}}</h4>
@@ -153,7 +153,7 @@
         </div>
 
         <div class="loadMore">
-            <a href="{{route('explore','alaaya')}}">
+            <a href="{{route('explore','aalaya')}}">
             <i class="fa fa-hand-pointer-o"></i><span class="loadMoreText"> Click To See More Items </span><i class="fa fa-angle-down"></i>
             </a>
         </div>
@@ -181,8 +181,9 @@
                 </button>
             </div>
             <div class="modal-body">
-                <iframe width="100%" height="600" class="prod-video" id="prodVideoLink" src="" sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation">
+                <iframe width="100%" height="600" class="prod-video" id="prodVideoLink" src="" sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation"> -->
                 </iframe>
+                <!-- <iframe width="100%" height="600" class="prod-video" src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fweb.facebook.com%2FJTRmediaHouse%2Fvideos%2F702359785033977%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe> -->
             </div>
         </div>
     </div>
