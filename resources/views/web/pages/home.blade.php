@@ -184,7 +184,7 @@
                 <iframe width="267" height="476" class="prod-video" id="prodVideoLink" src="" 
                 sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation"
                 style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" 
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true">
+                allow="clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true">
                 </iframe>
                 <!-- width="100%" height="600" -->
             </div>
