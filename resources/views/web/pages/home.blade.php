@@ -19,7 +19,7 @@
                                     <p class="price_text">Price <s style="color: #969696;">Rs. {{$new->st_price}}</s><br><span style="color: #262626;"> Rs. {{$new->price}}</span></p>
                                     <div class="tshirt_img">
                                         <img class="product-img" src="{{env('ADMIN_URL') .'/uploads/images/products/'. $new->images[0]->path}}">
-                                        <img class="play-button" onclick="playVideo('{{$new->video[0]->url}}?autoplay=1');" data-url="{{$new->video[0]->url}}" src="{{asset('theme/images/play-button.png')}}" data-toggle="modal" data-target=".video-modal-lg">
+                                        <img class="play-button" onclick="playVideo('{{$new->video[0]->url}}');" data-url="{{$new->video[0]->url}}" src="{{asset('theme/images/play-button.png')}}" data-toggle="modal" data-target=".video-modal-lg">
 
                                         <!-- <iframe width="100%" height="500" src="https://www.youtube.com/embed/HyQWr89JVEg"
                                             sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation">
@@ -73,7 +73,7 @@
                                     <p class="price_text">Price <s style="color: #969696;">Rs. {{$BSitem->st_price}}</s><br><span style="color: #262626;"> Rs. {{$BSitem->price}}</span></p>
                                     <div class="tshirt_img">
                                         <img class="product-img" src="{{env('ADMIN_URL') .'/uploads/images/products/'. $BSitem->images[0]->path}}">
-                                        <img class="play-button" onclick="playVideo('{{$BSitem->video[0]->url}}?autoplay=1');" data-url="{{$BSitem->video[0]->url}}" src="{{asset('theme/images/play-button.png')}}" data-toggle="modal" data-target=".video-modal-lg">
+                                        <img class="play-button" onclick="playVideo('{{$BSitem->video[0]->url}}');" data-url="{{$BSitem->video[0]->url}}" src="{{asset('theme/images/play-button.png')}}" data-toggle="modal" data-target=".video-modal-lg">
 
                                         <!-- <iframe width="100%" height="500" src="https://www.youtube.com/embed/HyQWr89JVEg"
                                             sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation">
@@ -127,7 +127,7 @@
                                     <p class="price_text">Price <s style="color: #969696;">Rs. {{$ALitem->st_price}}</s><br><span style="color: #262626;"> Rs. {{$ALitem->price}}</span></p>
                                     <div class="tshirt_img">
                                         <img class="product-img" src="{{env('ADMIN_URL') .'/uploads/images/products/'. $ALitem->images[0]->path}}">
-                                        <img class="play-button" onclick="playVideo('{{$ALitem->video[0]->url}}?autoplay=1');" data-url="{{$ALitem->video[0]->url}}" src="{{asset('theme/images/play-button.png')}}" data-toggle="modal" data-target=".video-modal-lg">
+                                        <img class="play-button" onclick="playVideo('{{$ALitem->video[0]->url}}');" data-url="{{$ALitem->video[0]->url}}" src="{{asset('theme/images/play-button.png')}}" data-toggle="modal" data-target=".video-modal-lg">
 
                                         <!-- <iframe width="100%" height="500" src="https://www.youtube.com/embed/HyQWr89JVEg"
                                             sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation">
@@ -184,7 +184,7 @@
                 <iframe width="267" height="476" class="prod-video" id="prodVideoLink" src="" 
                 sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation"
                 style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" 
-                allow="clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true">
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true">
                 </iframe>
                 <!-- width="100%" height="600" -->
             </div>
