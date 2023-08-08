@@ -180,10 +180,13 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <iframe width="100%" height="600" class="prod-video" id="prodVideoLink" src="" sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation"> -->
+            <div class="modal-body text-center">
+                <iframe width="267" height="476" class="prod-video" id="prodVideoLink" src="" 
+                sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation"
+                style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" 
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true">
                 </iframe>
-                <!-- <iframe width="100%" height="600" class="prod-video" src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fweb.facebook.com%2FJTRmediaHouse%2Fvideos%2F702359785033977%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe> -->
+                <!-- width="100%" height="600" -->
             </div>
         </div>
     </div>
