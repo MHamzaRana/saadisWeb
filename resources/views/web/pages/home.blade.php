@@ -46,7 +46,7 @@
         </div>
         <div class="loadMore">
             <a href="{{route('explore','new-arrival')}}">
-                <i class="fa fa-hand-pointer-o"></i><span class="loadMoreText"> Click To See More Items </span><i class="fa fa-angle-down"></i>
+            <i class="fa fa-hand-pointer-o"></i><span class="loadMoreText"> Click To See More Items </span>ِ<br>مزید دیکھنے کیلئے کلک کریں<br><i class="fa fa-2x fa-angle-down"></i>
             </a>
         </div>
 
@@ -99,7 +99,7 @@
 
         <div class="loadMore">
             <a href="{{route('explore','bin-saeed')}}">
-            <i class="fa fa-hand-pointer-o"></i><span class="loadMoreText"> Click To See More Items </span><i class="fa fa-angle-down"></i>
+            <i class="fa fa-hand-pointer-o"></i><span class="loadMoreText"> Click To See More Items </span>ِ<br>مزید دیکھنے کیلئے کلک کریں<br><i class="fa fa-2x fa-angle-down"></i>
             </a>
         </div>
         <!-- <a class="carousel-control-prev" href="#electronic_main_slider" role="button" data-slide="prev">
@@ -154,7 +154,7 @@
 
         <div class="loadMore">
             <a href="{{route('explore','aalaya')}}">
-            <i class="fa fa-hand-pointer-o"></i><span class="loadMoreText"> Click To See More Items </span><i class="fa fa-angle-down"></i>
+            <i class="fa fa-hand-pointer-o"></i><span class="loadMoreText"> Click To See More Items </span>ِ<br>مزید دیکھنے کیلئے کلک کریں<br><i class="fa fa-2x fa-angle-down"></i>
             </a>
         </div>
         <!-- <a class="carousel-control-prev" href="#jewellery_main_slider" role="button" data-slide="prev">

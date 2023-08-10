@@ -1,3 +1,20 @@
+<!-- Mobile view  -->
+<div class="row mobile_nav">
+    <div class="col-md-12 bg-dark p-3">
+        <span class="toggle_icon ml-2" onclick="openMobileNav()"><img src="{{asset('theme/images/toggle-icon.png')}}"></span>
+    </div>
+</div>
+<div id="mobileSidenav" class="mobilesidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeMobileNav()">&times;</a>
+    <a href="{{route('home')}}">Home</a>
+    <a href="{{route('explore','new-arrival')}}">New Arrival <span class="badge badge-primary ml-2">New</span></a>
+    <a href="{{route('explore','bin-saeed')}}">Bin Saeed  <i class="ml-2 fa fa-star"></i></a> <!-- <span class="badge badge-primary float-right mr-2">Brand</span> -->
+    <a href="{{route('explore','aalaya')}}">Aalaya  <i class="ml-2 fa fa-star"></i></a>
+    <a href="{{route('explore','all-collections')}}">All Collections</a>
+    <a href="{{route('explore','best-seller')}}">Best Seller</a>
+    <a href="{{route('explore','today-deal')}}">Today's Deal</a>
+    <a href="{{route('customer-service')}}">Customer Service <i class="ml-2 fa fa-mobile"></i></a>
+</div>
 <!-- banner bg main start -->
 <div class="banner_bg_main" @if(isset($banner)) style="background-image: url({{$banner}});padding-bottom:4rem;" @endif>
     <!-- header top section start -->
@@ -25,7 +42,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="logo"><a href="{{env('APP_URL')}}"><img src="{{asset('theme/images/profile.png')}}"></a></div>
+                    <div class="logo">
+                        <a href="{{env('APP_URL')}}" class="home-link"><img src="{{asset('theme/images/profile.png')}}"></a>
+                        <a onclick="openMobileNav()" class="menu-link cursor-pointer"><img src="{{asset('theme/images/profile.png')}}"></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -53,22 +73,22 @@
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </div>
-                <div @if(isset($title) && $title == 'Cart') class="main d-none" @else class="main" @endif>
+                <div @if(isset($title) && $title=='Cart' ) class="main d-none" @else class="main" @endif>
                     <!-- Another variation with a button -->
                     <form action="{{route('explore','all-collections')}}" method="get" id="searchForm">
-                    <div class="input-group">
-                        
-                        <input type="text" name="search" class="form-control" placeholder="Search" id="searchInput">
-                        <div class="input-group-append">
-                            <button class="btn btn-secondary" type="button" onclick="$('#searchForm').submit();" style="background-color: #64a7ee; border-color:#64a7ee ">
-                                <i class="fa fa-search"></i>
-                            </button>
+                        <div class="input-group">
+
+                            <input type="text" name="search" class="form-control" placeholder="Search" id="searchInput">
+                            <div class="input-group-append">
+                                <button class="btn btn-secondary" type="button" onclick="$('#searchForm').submit();" style="background-color: #64a7ee; border-color:#64a7ee ">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+
                         </div>
-                        
-                    </div>
                     </form>
                 </div>
-                <div @if(isset($title) && $title == 'Cart') class="header_box d-none" @else class="header_box" @endif>
+                <div @if(isset($title) && $title=='Cart' ) class="header_box d-none" @else class="header_box" @endif>
                     <div class="lang_box d-none">
                         <a href="#" title="Language" class="nav-link" data-toggle="dropdown" aria-expanded="true">
                             <img src="{{asset('theme/images/flag-uk.png')}}" alt="flag" class="mr-2 " title="United Kingdom"> English <i class="fa fa-angle-down ml-2" aria-hidden="true"></i>

@@ -60,6 +60,14 @@
    function closeNav() {
       document.getElementById("mySidenav").style.width = "0";
    }
+
+   function openMobileNav() {
+      document.getElementById("mobileSidenav").style.width = "100%";
+   }
+
+   function closeMobileNav() {
+      document.getElementById("mobileSidenav").style.width = "0";
+   }
 </script>
 
 @stack('scripts')
