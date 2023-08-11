@@ -151,3 +151,8 @@
         display: block;
     }
 }
+
+.banner_taital{
+    font-size: 45px;
+    text-shadow: #000 1px 1px;
+}
