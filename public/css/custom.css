@@ -122,6 +122,10 @@
 .logo .menu-link{
  display: none;
 }
+.banner_taital{
+    font-size: 45px;
+    text-shadow: #000 1px 1px;
+}
 @media screen and (max-height: 450px) {
     .mobilesidenav {
         padding-top: 15px;
@@ -150,9 +154,9 @@
     .logo .menu-link{
         display: block;
     }
+    .banner_taital{
+        font-size: 14px;
+        text-shadow: #000 1px 1px;
+    }
 }
 
-.banner_taital{
-    font-size: 45px;
-    text-shadow: #000 1px 1px;
-}
