@@ -24,7 +24,7 @@
     <link rel="icon" href="{{asset('theme/images/favicon.png')}}" type="image/gif" />
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="{{asset('theme/css/jquery.mCustomScrollbar.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/custom.css?n=0.2')}}">
+    <link rel="stylesheet" href="{{asset('css/custom.css?n=0.3')}}">
     <!-- Tweaks for older IEs-->
     <!-- <link rel="stylesheet" href="{{asset('vendor/font-awesome/css/font-awesome.css')}}"> -->
     <!-- fonts -->
