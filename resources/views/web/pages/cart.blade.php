@@ -71,7 +71,9 @@
                 $ids = [];
                 @endphp
                 <div class="col-md-6">
-                    * Delivery charges may vary depending on the parcel weight.
+                    <!-- * Delivery charges may vary depending on the parcel weight. -->
+                    <span style="font-weight: bold;">📢 LIMITED TIME OFFER 📢 <br>
+                    ALL Pakistan Home Delivery Is Free Now</span>
                     @foreach($products as $new)
                     <div class="card mt-4">
                         <div class="card-body">
@@ -188,21 +190,22 @@
         });
         setTimeout(() => {
             $('#totalCharges').text(grossAmnt);
-            if (totalQty <= 2)
-                $('#deliveryCharges').text(125);
-            else if (totalQty > 2 && totalQty <= 5)
-                $('#deliveryCharges').text(250);
-            else if (totalQty > 5 && totalQty <= 10)
-                $('#deliveryCharges').text(500);
-            else if (totalQty > 10 && totalQty <= 15)
-                $('#deliveryCharges').text(750);
-            else if (totalQty > 15 && totalQty <= 20)
-                $('#deliveryCharges').text(1000);
-            else if (totalQty > 20 && totalQty <= 25)
-                $('#deliveryCharges').text(1250);
-            else if (totalQty > 25 && totalQty <= 30)
-                $('#deliveryCharges').text(1500);
-
+            // if (totalQty <= 2)
+            //     $('#deliveryCharges').text(125);
+            // else if (totalQty > 2 && totalQty <= 5)
+            //     $('#deliveryCharges').text(250);
+            // else if (totalQty > 5 && totalQty <= 10)
+            //     $('#deliveryCharges').text(500);
+            // else if (totalQty > 10 && totalQty <= 15)
+            //     $('#deliveryCharges').text(750);
+            // else if (totalQty > 15 && totalQty <= 20)
+            //     $('#deliveryCharges').text(1000);
+            // else if (totalQty > 20 && totalQty <= 25)
+            //     $('#deliveryCharges').text(1250);
+            // else if (totalQty > 25 && totalQty <= 30)
+            //     $('#deliveryCharges').text(1500);
+            
+                $('#deliveryCharges').text(0); // LIMITED TIME OFFER FREE HOME DELIVERY
             setTimeout(() => {
                 netAmnt = grossAmnt + parseInt($('#deliveryCharges').text());
                 $('#netAmount').text(netAmnt);

@@ -167,20 +167,22 @@ class OrderController extends Controller
             }
             $order->qty = $totalQty;
 
-            if ($totalQty <= 2)
-                $deliveryCharges = 125;
-            else if ($totalQty > 2 && $totalQty <= 5)
-                $deliveryCharges = 250;
-            else if ($totalQty > 5 && $totalQty <= 10)
-                $deliveryCharges = 500;
-            else if ($totalQty > 10 && $totalQty <= 15)
-                $deliveryCharges = 750;
-            else if ($totalQty > 15 && $totalQty <= 20)
-                $deliveryCharges = 1000;
-            else if ($totalQty > 20 && $totalQty <= 25)
-                $deliveryCharges = 1250;
-            else if ($totalQty > 25 && $totalQty <= 30)
-                $deliveryCharges = 1500;
+            // if ($totalQty <= 2)
+            //     $deliveryCharges = 125;
+            // else if ($totalQty > 2 && $totalQty <= 5)
+            //     $deliveryCharges = 250;
+            // else if ($totalQty > 5 && $totalQty <= 10)
+            //     $deliveryCharges = 500;
+            // else if ($totalQty > 10 && $totalQty <= 15)
+            //     $deliveryCharges = 750;
+            // else if ($totalQty > 15 && $totalQty <= 20)
+            //     $deliveryCharges = 1000;
+            // else if ($totalQty > 20 && $totalQty <= 25)
+            //     $deliveryCharges = 1250;
+            // else if ($totalQty > 25 && $totalQty <= 30)
+            //     $deliveryCharges = 1500;
+
+            $deliveryCharges = 0; // LIMITED TIME OFFER FREE HOME DELIVERY
 
             $order->price = $price + $deliveryCharges;
             $order->delivery_charges = $deliveryCharges;
