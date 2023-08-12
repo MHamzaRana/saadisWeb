@@ -86,12 +86,11 @@
 	/* height:60px; */
     padding: 7px 13px;
 	top:40px;
-	right:40px;
+	right:20px;
 	background-color:#25d366;
 	color:#FFF !important;
 	border-radius:15px;
 	text-align:center;
-	box-shadow: 2px 2px 3px #999;
 }
 /* Mobile screen styling  */
 
