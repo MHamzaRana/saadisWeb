@@ -15,19 +15,22 @@
             <li><a href="{{route('customer-service')}}">Customer Service</a></li>
          </ul>
       </div>
-      <div class="location_main">Help Line Number : <a href="#">+92 303 5528 404</a></div>
+      <div class="location_main">Help Line Number : <a href="https://wa.me/+923035528404">+92 303 5528 404</a></div>
    </div>
 </div>
 <!-- footer section end -->
 <!-- copyright section start -->
 <div class="copyright_section">
    <div class="container">
-      <p class="copyright_text">© {{ date('Y') }} All Rights Reserved. Developed by <a href="https://theelitetechnology.com/">EliteTech</a></p>
+      <p class="copyright_text">© {{ date('Y') }} All Rights Reserved. Developed by <a target="_blank" href="https://theelitetechnology.com/">EliteTech</a></p>
    </div>
 </div>
 <!-- copyright section end -->
 
 
+   <a class="float-top" target="_blank" href="https://wa.me/+923035528404">
+   <i class="fa fa-3x fa-whatsapp my-float"></i>
+   </a>
 
 <form action="{{route('cart')}}" method="get" class="float" id="CartInstantView">
    
