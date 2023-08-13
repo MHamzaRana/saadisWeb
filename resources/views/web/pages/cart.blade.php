@@ -73,7 +73,7 @@
                 <div class="col-md-6">
                     <!-- * Delivery charges may vary depending on the parcel weight. -->
                     <span style="font-weight: bold;">📢 LIMITED TIME OFFER 📢 <br>
-                    ALL Pakistan Home Delivery Is Free Now</span>
+                        ALL Pakistan Home Delivery Is Free Now</span>
                     @foreach($products as $new)
                     <div class="card mt-4">
                         <div class="card-body">
@@ -166,7 +166,7 @@
 
 @push('scripts')
 <script>
-    let ids = JSON.parse("{{json_encode($ids)}}");
+    let avlbl_Ids = JSON.parse("{{json_encode($ids)}}");
     $(document).ready(function() {
         finalCartItems();
         $('#CartInstantView').hide();
@@ -175,19 +175,25 @@
     });
 
     function calculatePriceDC() {
+        var items = [];
+        items = JSON.parse(localStorage.getItem("items"));
+        let ids = items.filter(function(obj) {
+            return avlbl_Ids.indexOf(obj) == -1
+        });
         grossAmnt = 0;
         netAmnt = 0;
         totalQty = 0;
-        $.each(ids, function(k, v) {
-            console.log(v);
-            console.log($('#prc_pid' + v).text());
-            console.log($('#qty_pid' + v).val());
-            prc = $('#prc_pid' + v).text();
-            qty = $('#qty_pid' + v).val();
-            totalPrc = (parseInt(prc) * parseInt(qty));
-            totalQty += parseInt(qty);
-            grossAmnt += totalPrc;
-        });
+        if (ids.length > 0)
+            $.each(ids, function(k, v) {
+                console.log(v);
+                console.log($('#prc_pid' + v).text());
+                console.log($('#qty_pid' + v).val());
+                prc = $('#prc_pid' + v).text();
+                qty = $('#qty_pid' + v).val();
+                totalPrc = (parseInt(prc) * parseInt(qty));
+                totalQty += parseInt(qty);
+                grossAmnt += totalPrc;
+            });
         setTimeout(() => {
             $('#totalCharges').text(grossAmnt);
             // if (totalQty <= 2)
@@ -204,8 +210,8 @@
             //     $('#deliveryCharges').text(1250);
             // else if (totalQty > 25 && totalQty <= 30)
             //     $('#deliveryCharges').text(1500);
-            
-                $('#deliveryCharges').text(0); // LIMITED TIME OFFER FREE HOME DELIVERY
+
+            $('#deliveryCharges').text(0); // LIMITED TIME OFFER FREE HOME DELIVERY
             setTimeout(() => {
                 netAmnt = grossAmnt + parseInt($('#deliveryCharges').text());
                 $('#netAmount').text(netAmnt);
@@ -325,7 +331,11 @@
         // Replace current querystring with the new one.
         history.replaceState(null, null, "?" + queryParams.toString());
 
+        
+
+        finalCartItems();
         $('#CartInstantView').hide();
+        calculatePriceDC();
     }
 </script>
 @endpush
