@@ -108,7 +108,7 @@ window.addEventListener("pageshow", function (event) {
             window.performance.navigation.type === 2);
     if (historyTraversal) {
         // Handle page restore.
-        //   window.location.reload();
-        checkCart();
+          window.location.reload();
+        // checkCart();
     }
 });
