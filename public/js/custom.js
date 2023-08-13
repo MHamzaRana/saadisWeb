@@ -101,26 +101,6 @@ function playVideo(url) {
 // if(performance.navigation.type == 2){
 //     location.reload(true);
 // }
-
-window.addEventListener('popstate', function(event) {
-    // The popstate event is fired each time when the current history entry changes.
-
-    // var r = confirm("You pressed a Back button! Are you sure?!");
-
-    if (1 == 1) {
-        // Call Back button programmatically as per user confirmation.
-        // history.back();
-        // Uncomment below line to redirect to the previous page instead.
-        window.location = document.referrer // Note: IE11 is not supporting this.
-    } else {
-        // Stay on the current page.
-        history.pushState(null, null, window.location.pathname);
-    }
-
-    history.pushState(null, null, window.location.pathname);
-
-}, false);
-
 window.addEventListener("pageshow", function (event) {
     var historyTraversal =
         event.persisted ||
@@ -132,6 +112,18 @@ window.addEventListener("pageshow", function (event) {
           window.location.reload();
     }
 });
+window.addEventListener('popstate', function(event) {
+    // The popstate event is fired each time when the current history entry changes.
+
+    // var r = confirm("You pressed a Back button! Are you sure?!");
+    window.location = document.referrer
+
+
+    history.pushState(null, null, window.location.pathname);
+
+}, false);
+
+
 // window.addEventListener("hashchange", function(e) {
 //     if(e.oldURL.length > e.newURL.length)
 //         checkCart();
