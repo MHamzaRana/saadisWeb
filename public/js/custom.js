@@ -121,17 +121,17 @@ window.addEventListener('popstate', function(event) {
 
 }, false);
 
-// window.addEventListener("pageshow", function (event) {
-//     var historyTraversal =
-//         event.persisted ||
-//         (typeof window.performance != "undefined" &&
-//             window.performance.navigation.type === 2);
-//     if (historyTraversal) {
-//         // Handle page restore.
-//         // checkCart();
-//           window.location.reload();
-//     }
-// });
+window.addEventListener("pageshow", function (event) {
+    var historyTraversal =
+        event.persisted ||
+        (typeof window.performance != "undefined" &&
+            window.performance.navigation.type === 2);
+    if (historyTraversal) {
+        // Handle page restore.
+        // checkCart();
+          window.location.reload();
+    }
+});
 // window.addEventListener("hashchange", function(e) {
 //     if(e.oldURL.length > e.newURL.length)
 //         checkCart();
