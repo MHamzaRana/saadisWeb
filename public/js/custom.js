@@ -108,13 +108,22 @@ window.addEventListener("pageshow", function (event) {
             window.performance.navigation.type === 2);
     if (historyTraversal) {
         // Handle page restore.
-        checkCart();
+        // checkCart();
           window.location.reload();
     }
 });
 window.addEventListener("hashchange", function(e) {
-    alert('HERE');
     if(e.oldURL.length > e.newURL.length)
         checkCart();
         window.location.reload();
 });
+function onLoad() {
+    document.addEventListener("deviceready", onDeviceReady, false);
+}
+function onDeviceReady() {
+    // Register the event listener
+    document.addEventListener("backbutton", onBackKeyDown, false);
+}
+function onBackKeyDown() {
+    window.location.reload();
+}
