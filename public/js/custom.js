@@ -109,7 +109,7 @@ window.addEventListener("pageshow", function (event) {
     if (historyTraversal) {
         // Handle page restore.
           window.location.reload();
-        // checkCart();
+        checkCart();
     }
 });
 window.addEventListener("hashchange", function(e) {
