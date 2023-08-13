@@ -53,7 +53,7 @@
 <script src="{{asset('theme/js/plugin.js')}}"></script>
 <!-- sidebar -->
 <script src="{{asset('theme/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
-<script src="{{asset('theme/js/custom.js?v=0.5')}}"></script>
+<script src="{{asset('theme/js/custom.js?v=0.6')}}"></script>
 <script src="{{asset('js/custom.js')}}"></script>
 <script>
    function openNav() {
