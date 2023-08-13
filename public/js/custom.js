@@ -108,11 +108,13 @@ window.addEventListener("pageshow", function (event) {
             window.performance.navigation.type === 2);
     if (historyTraversal) {
         // Handle page restore.
-          window.location.reload();
         checkCart();
+          window.location.reload();
     }
 });
 window.addEventListener("hashchange", function(e) {
+    alert('HERE');
     if(e.oldURL.length > e.newURL.length)
+        checkCart();
         window.location.reload();
 });
