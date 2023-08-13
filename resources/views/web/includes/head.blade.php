@@ -41,4 +41,4 @@
     @stack('styles')
 </head>
 
-<body onload="onLoad()">
+<body>

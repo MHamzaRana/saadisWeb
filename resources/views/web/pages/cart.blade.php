@@ -75,7 +75,7 @@
                     <span style="font-weight: bold;">📢 LIMITED TIME OFFER 📢 <br>
                         ALL Pakistan Home Delivery Is Free Now</span>
                     @foreach($products as $new)
-                    <div class="card mt-4">
+                    <div class="card mt-4" id="wrpItem_{{$new->id}}">
                         <div class="card-body">
                             <div class="row">
                                 <img class="col-md-4 card-img float-left prod-card-img" src="{{env('ADMIN_URL') .'/uploads/images/products/'. $new->images[0]->path}}">
@@ -167,18 +167,28 @@
 @push('scripts')
 <script>
     let avlbl_Ids = JSON.parse("{{json_encode($ids)}}");
+    let ids = [];
     $(document).ready(function() {
         finalCartItems();
         $('#CartInstantView').hide();
         autoFillCartInfo();
         calculatePriceDC();
+        setTimeout(() => {
+            removeItemsNotInCart();
+        }, 400);
     });
-
+    function removeItemsNotInCart(){
+        $.each(avlbl_Ids,function(k,v){
+            if(ids.indexOf(String(v)) == -1){
+                $('#wrpItem_'+v).remove();
+            }
+        });
+    }
     function calculatePriceDC() {
         var items = [];
         items = JSON.parse(localStorage.getItem("items"));
-        let ids = items.filter(function(obj) {
-            return avlbl_Ids.indexOf(obj) == -1
+        ids = items.filter(function(obj) {
+            return avlbl_Ids.indexOf(parseInt(obj)) !== -1
         });
         grossAmnt = 0;
         netAmnt = 0;
