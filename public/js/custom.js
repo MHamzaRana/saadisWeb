@@ -112,3 +112,7 @@ window.addEventListener("pageshow", function (event) {
         // checkCart();
     }
 });
+window.addEventListener("hashchange", function(e) {
+    if(e.oldURL.length > e.newURL.length)
+        window.location.reload();
+});
