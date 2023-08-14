@@ -192,7 +192,7 @@ class OrderController extends Controller
             DB::rollback();
             return redirect()->back()->withErrors($ex->getMessage());
         }
-        $order = Order::find($order->id)->with(['orderProducts'])->first();
+        $order = Order::where('id',$order->id)->with(['orderProducts'])->first();
         return view('web.pages.order-success', ['order' => $order]);
     }
 
