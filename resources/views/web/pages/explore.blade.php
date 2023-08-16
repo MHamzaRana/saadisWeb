@@ -21,7 +21,7 @@
                                     <h4 class="shirt_text">{{$new->name}}</h4>
                                     <p class="price_text">Price <s style="color: #969696;">Rs. {{$new->st_price}}</s><br><span style="color: #262626;"> Rs. {{$new->price}}</span></p>
                                     <div class="tshirt_img">
-                                        <img class="product-img" src="{{env('ADMIN_URL') .'/uploads/images/products/'. $new->images[0]->path}}">
+                                        <img class="product-img" title="{{$new->title}}" src="{{env('ADMIN_URL') .'/uploads/images/products/'. $new->images[0]->path}}">
                                         <img class="play-button" onclick="playVideo('{{$new->video[0]->url}}');" data-url="{{$new->video[0]->url}}" src="{{asset('theme/images/play-button.png')}}" data-toggle="modal" data-target=".video-modal-lg">
 
                                         <!-- <iframe width="100%" height="500" src="https://www.youtube.com/embed/HyQWr89JVEg"
@@ -30,7 +30,7 @@
                                     </div>
                                     <div class="btn_main">
                                         @if($new->inventory && $new->inventory->qty > 0)
-                                        <div class="buy_bt btn btn-default cart_add" data-id="{{$new->id}}"><a onclick="addToCart('{{$new->id}}');">Add <i class="fa fa-shopping-cart"></i></a></div>
+                                        <div class="buy_bt btn btn-default cart_add" data-id="{{$new->id}}"><a onclick="addToCart('{{$new->id}}');">Buy <i class="fa fa-shopping-cart"></i></a></div>
                                         <div class="buy_bt btn btn-default cart_remove" data-id="{{$new->id}}" style="display: none;"><a onclick="removeFromCart('{{$new->id}}');">Remove <i class="fa fa-shopping-cart"></i></a></div>
                                         <!-- <div class="seemore_bt"><a href="#">See More</a></div> -->
                                         @else
