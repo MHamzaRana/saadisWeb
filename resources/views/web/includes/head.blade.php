@@ -10,10 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Saad's Collection</title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <title>Saadi's Collection Ladies Original Branded Suits</title>
+    <meta name="keywords" content="binsaeed, binsaeedcollection, original_binsaeed, binsaeedlawn, aalaya, aalayalawn, ladiessuits, ladiesdresses, ladies, suits, dresses, casual, partywear, brandedsuits, lawn, sale, discount, freeshipment, free_delivery">
+    <meta name="description" content="Saadi's Collection is an online store for ladies original branded suits. At Saadi's Collection you will find ladies suits of all renowned brands on discount prices.">
+    <meta name="author" content="M Hamza Rana">
     <!-- bootstrap css -->
     <link rel="stylesheet" type="text/css" href="{{asset('theme/css/bootstrap.min.css')}}">
     <!-- style css -->
