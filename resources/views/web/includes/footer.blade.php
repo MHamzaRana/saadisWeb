@@ -17,6 +17,13 @@
          </ul>
       </div>
       <div class="location_main">Help Line Number : <a href="https://wa.me/+923035528404">+92 303 5528 404</a></div>
+      <div class="footer_menu social">
+         <ul>
+            <li><a class="facebook-btn" href="https://facebook.com/saadicollectionpk/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="instagram-btn" href="https://instagram.com/saadiscollection1/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+            <li><a class="youtube-btn" href="https://youtube.com/@Saadis.Collection/" target="_blank"><i class="fa fa-youtube"></i></a></li>
+         </ul>
+      </div>
    </div>
 </div>
 <!-- footer section end -->
