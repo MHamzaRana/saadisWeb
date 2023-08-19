@@ -5,7 +5,7 @@
                 <div class="carousel-item active">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h5 class="banner_taital">📢 LIMITED TIME OFFER 📢 <br>❗ALL Pakistan Home Delivery Free❗</h5>
+                            <h5 class="banner_taital">📢 LIMITED TIME OFFER 📢 <br>❗Allover Pakistan Free Shipment❗</h5>
                             <div class="buynow_bt"><a href="{{route('explore','new-arrival')}}">Buy New Arrival</a></div>
                         </div>
                     </div>
@@ -13,7 +13,7 @@
                 <div class="carousel-item">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h5 class="banner_taital">📢 LIMITED TIME OFFER 📢 <br>❗ALL Pakistan Home Delivery Free❗</h5>
+                            <h5 class="banner_taital">📢 LIMITED TIME OFFER 📢 <br>❗Allover Pakistan Free Shipment❗</h5>
                             <div class="buynow_bt"><a href="{{route('explore','bin-saeed')}}">Buy Bin Saeed</a></div>
                         </div>
                     </div>
@@ -21,7 +21,7 @@
                 <div class="carousel-item">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h5 class="banner_taital">📢 LIMITED TIME OFFER 📢 <br>❗ALL Pakistan Home Delivery Free❗</h5>
+                            <h5 class="banner_taital">📢 LIMITED TIME OFFER 📢 <br>❗Allover Pakistan Free Shipment❗</h5>
                             <div class="buynow_bt"><a href="{{route('explore','aalaya')}}">Buy Aalaya</a></div>
                         </div>
                     </div>
