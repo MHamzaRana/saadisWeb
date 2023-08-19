@@ -1,7 +1,7 @@
 <!-- Mobile view  -->
 <div class="row mobile_nav">
     <div class="col-md-12 bg-dark p-3">
-        <span class="toggle_icon ml-2" onclick="openMobileNav()"><img src="{{asset('theme/images/toggle-icon.png')}}"></span>
+        <span class="toggle_icon ml-2" onclick="openMobileNav()"><img src="{{asset('theme/images/toggle-icon.png')}}" alt="Toogle"></span>
     </div>
 </div>
 <div id="mobileSidenav" class="mobilesidenav">
@@ -43,8 +43,8 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="logo">
-                        <a href="{{env('APP_URL')}}" class="home-link"><img src="{{asset('theme/images/profile.png')}}"></a>
-                        <a onclick="openMobileNav()" class="menu-link cursor-pointer"><img src="{{asset('theme/images/profile.png')}}"></a>
+                        <a href="{{env('APP_URL')}}" class="home-link"><img src="{{asset('theme/images/profile.png')}}" alt="Profile"></a>
+                        <a onclick="openMobileNav()" class="menu-link cursor-pointer"><img src="{{asset('theme/images/profile.png')}}" alt="Profile"></a>
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                     <a href="{{route('explore','aalaya')}}">Aalaya</a>
                     <a href="{{route('explore','all-collections')}}">All Collections</a>
                 </div>
-                <span class="toggle_icon" onclick="openNav()"><img class="toggle-icon-img" src="{{asset('theme/images/toggle-icon.png')}}"></span>
+                <span class="toggle_icon" onclick="openNav()"><img class="toggle-icon-img" src="{{asset('theme/images/toggle-icon.png')}}" alt="Toogle"></span>
                 <div class="dropdown d-none">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Category
                     </button>
@@ -73,7 +73,7 @@
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </div>
-                <div @if(isset($title) && $title=='Cart' ) class="main d-none" @else class="main" @endif>
+                <div @if(isset($title) && $title == 'Cart' ) class="main d-none" @else class="main" @endif>
                     <!-- Another variation with a button -->
                     <form action="{{route('explore','all-collections')}}" method="get" id="searchForm">
                         <div class="input-group">
@@ -88,8 +88,8 @@
                         </div>
                     </form>
                 </div>
-                <div @if(isset($title) && $title=='Cart' ) class="header_box d-none" @else class="header_box" @endif>
-                    <div class="lang_box d-none">
+                <div @if(isset($title) && $title == 'Cart' ) class="header_box d-none" @else class="header_box" @endif>
+                    <!-- <div class="lang_box">
                         <a href="#" title="Language" class="nav-link" data-toggle="dropdown" aria-expanded="true">
                             <img src="{{asset('theme/images/flag-uk.png')}}" alt="flag" class="mr-2 " title="United Kingdom"> English <i class="fa fa-angle-down ml-2" aria-hidden="true"></i>
                         </a>
@@ -99,7 +99,7 @@
                                 French
                             </a>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="login_menu">
                         <ul>
                             <li><a href="{{route('cart')}}">

@@ -19,7 +19,7 @@
                                     <p class="price_text">Price <s style="color: #969696;">Rs. {{$new->st_price}}</s><br><span style="color: #262626;"> Rs. {{$new->price}}</span></p>
                                     <div class="tshirt_img">
                                         <img class="product-img" title="{{$new->label}}" src="{{env('ADMIN_URL') .'/uploads/images/products/'. $new->images[0]->path}}"
-                                        alt="Product">
+                                        alt="{{$new->label}}">
                                         <img class="play-button" onclick="playVideo('{{$new->video[0]->url}}');" data-url="{{$new->video[0]->url}}" src="{{asset('theme/images/play-button.png')}}" 
                                         data-toggle="modal" data-target=".video-modal-lg" alt="Paly">
 
@@ -75,7 +75,7 @@
                                     <p class="price_text">Price <s style="color: #969696;">Rs. {{$BSitem->st_price}}</s><br><span style="color: #262626;"> Rs. {{$BSitem->price}}</span></p>
                                     <div class="tshirt_img">
                                         <img class="product-img" title="{{$BSitem->label}}" src="{{env('ADMIN_URL') .'/uploads/images/products/'. $BSitem->images[0]->path}}"
-                                        alt="Product">
+                                        alt="{{$new->label}}">
                                         <img class="play-button" onclick="playVideo('{{$BSitem->video[0]->url}}');" data-url="{{$BSitem->video[0]->url}}" src="{{asset('theme/images/play-button.png')}}" 
                                         data-toggle="modal" data-target=".video-modal-lg" alt="Play">
 
@@ -131,7 +131,7 @@
                                     <p class="price_text">Price <s style="color: #969696;">Rs. {{$ALitem->st_price}}</s><br><span style="color: #262626;"> Rs. {{$ALitem->price}}</span></p>
                                     <div class="tshirt_img">
                                         <img class="product-img" title="{{$ALitem->label}}" src="{{env('ADMIN_URL') .'/uploads/images/products/'. $ALitem->images[0]->path}}"
-                                        alt="Product">
+                                        alt="{{$new->label}}">
                                         <img class="play-button" onclick="playVideo('{{$ALitem->video[0]->url}}');" data-url="{{$ALitem->video[0]->url}}" src="{{asset('theme/images/play-button.png')}}" 
                                         data-toggle="modal" data-target=".video-modal-lg" alt="Play">
 

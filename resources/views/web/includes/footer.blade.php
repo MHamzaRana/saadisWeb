@@ -3,8 +3,9 @@
    <div class="container">
       <div class="footer_logo"><a href="{{route('home')}}"><img src="{{asset('theme/images/profile_footer.png')}}"></a></div>
       <div class="input_bt">
-         <input type="text" class="mail_bt" placeholder="Your Email" name="Your Email">
-         <span class="subscribe_bt" id="basic-addon2"><a href="#">Subscribe</a></span>
+         <!-- <input type="text" class="mail_bt" placeholder="Your Email" name="Your Email"> -->
+         <!-- <span class="subscribe_bt" id="basic-addon2"><a href="#">Subscribe</a></span> -->
+         <p>Saadi's Collection is an online store for ladies' original branded suits. At Saadi's Collection, you will find ladies' suits of all renowned brands at discount prices.</p>
       </div>
       <div class="footer_menu">
          <ul>
