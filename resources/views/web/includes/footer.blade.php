@@ -54,16 +54,18 @@
 @stack('modal')
 <!-- modal section end -->
 <!-- Javascript files-->
-<script src="{{asset('theme/js/jquery.min.js')}}"></script>
-<script src="{{asset('theme/js/popper.min.js')}}"></script>
-<script src="{{asset('theme/js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{asset('theme/js/jquery-3.0.0.min.js')}}"></script>
+<!-- IN APP.js <script src="{{asset('theme/js/jquery.min.js')}}"></script> -->
+<!-- IN APP.js <script src="{{asset('theme/js/popper.min.js')}}"></script> -->
+<!-- IN APP.js <script src="{{asset('theme/js/bootstrap.bundle.min.js')}}"></script> -->
+<!-- IN APP.js <script src="{{asset('theme/js/jquery-3.0.0.min.js')}}"></script> -->
 <!-- commented scripts  -->
 <!-- <script src="{{asset('theme/js/plugin.js')}}"></script> -->
 <!-- sidebar -->
 <!-- <script src="{{asset('theme/js/jquery.mCustomScrollbar.concat.min.js')}}"></script> -->
 <!-- end commented scripts  -->
-<script src="{{asset('theme/js/custom.js?v=0.01')}}"></script>
+<!-- IN APP.js <script src="{{asset('theme/js/custom.js?v=0.01')}}"></script> -->
+<!-- IN APP.js <script src="{{asset('js/custom.js')}}"></script> -->
+<script src="{{asset('js/app.js')}}"></script>
 <script src="{{asset('js/custom.js')}}"></script>
 <script>
    function openNav() {

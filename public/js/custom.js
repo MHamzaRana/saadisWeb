@@ -1,9 +1,3 @@
-// $('#searchInput').on('keypress',function(e){
-//     if(e.which == 13){
-//         $('#searchForm').submit();
-//     }
-
-// });
 $(document).ready(function () {
     manageAddedItems();
     checkCart();
@@ -112,6 +106,11 @@ window.addEventListener("pageshow", function (event) {
           window.location.reload();
     }
 });
+// window.addEventListener("hashchange", function(e) {
+//     if(e.oldURL.length > e.newURL.length)
+//         checkCart();
+//         window.location.reload();
+// });
 window.addEventListener('popstate', function(event) {
     // The popstate event is fired each time when the current history entry changes.
 
@@ -124,9 +123,5 @@ window.addEventListener('popstate', function(event) {
 }, false);
 
 
-// window.addEventListener("hashchange", function(e) {
-//     if(e.oldURL.length > e.newURL.length)
-//         checkCart();
-//         window.location.reload();
-// });
+
 

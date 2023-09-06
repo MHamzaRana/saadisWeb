@@ -72,8 +72,8 @@
                 @endphp
                 <div class="col-md-6">
                     <!-- * Delivery charges may vary depending on the parcel weight. -->
-                    <span style="font-weight: bold;">📢 LIMITED TIME OFFER 📢 <br>
-                        ALL Pakistan Home Delivery Is Free Now</span>
+                    <!-- <span style="font-weight: bold;">📢 LIMITED TIME OFFER 📢 <br>
+                        ALL Pakistan Home Delivery Is Free Now</span> -->
                     @foreach($products as $new)
                     <div class="card mt-4" id="wrpItem_{{$new->id}}">
                         <div class="card-body">

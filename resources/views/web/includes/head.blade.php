@@ -17,22 +17,22 @@
 
     <link rel="canonical" href="{{url()->current()}}" />
     <!-- bootstrap css -->
-    <link rel="stylesheet" type="text/css" href="{{asset('theme/css/bootstrap.min.css')}}">
+    <!-- IN APP.css <link rel="stylesheet" type="text/css" href="{{asset('theme/css/bootstrap.min.css')}}"> -->
     <!-- style css -->
-    <link rel="stylesheet" type="text/css" href="{{asset('theme/css/style.css')}}">
+    <!-- IN APP.css <link rel="stylesheet" type="text/css" href="{{asset('theme/css/style.css')}}"> -->
     <!-- Responsive-->
-    <link rel="stylesheet" href="{{asset('theme/css/responsive.css')}}">
+    <!-- IN APP.css <link rel="stylesheet" href="{{asset('theme/css/responsive.css')}}"> -->
     <!-- fevicon -->
     <link rel="icon" href="{{asset('theme/images/favicon.png')}}" type="image/gif" />
     <!-- Scrollbar Custom CSS --> <!-- commented styles  -->
     <!-- <link rel="stylesheet" href="{{asset('theme/css/jquery.mCustomScrollbar.min.css')}}"> -->
-    <link rel="stylesheet" href="{{asset('css/custom.css?n=0.03')}}">
+    <!-- IN APP.css <link rel="stylesheet" href="{{asset('css/custom.css?n=0.03')}}"> -->
     <!-- Tweaks for older IEs--> <!-- commented styles  -->
     <!-- <link rel="stylesheet" href="{{asset('vendor/font-awesome/css/font-awesome.css')}}"> -->
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
     <!-- font awesome -->
-    <link rel="stylesheet" type="text/css" href="{{asset('vendor/font-awesome/css/font-awesome.min.css')}}">
+    <!-- IN APP.css  <link rel="stylesheet" type="text/css" href="{{asset('vendor/font-awesome/css/font-awesome.min.css')}}">  -->
     <!--  -->
     <!-- owl stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Poppins:400,700&display=swap&subset=latin-ext" rel="stylesheet">
@@ -41,6 +41,7 @@
     <!-- <link rel="stylesoeet" href="{{asset('theme/css/owl.theme.default.min.css')}}"> -->
     <!-- <link rel="stylesheet" href="{{asset('theme/css/jquery.fancybox.min.css')}}" media="screen"> -->
     <!-- end commented styles  -->
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
     @stack('styles')
 </head>
