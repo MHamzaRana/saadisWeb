@@ -1,7 +1,7 @@
 <!-- footer section start -->
 <div class="footer_section layout_padding">
    <div class="container">
-      <div class="footer_logo"><a href="{{route('home')}}"><img src="{{asset('theme/images/profile_footer.png')}}"></a></div>
+      <div class="footer_logo"><a href="{{route('home')}}"><img alt="Saadi's Collection" src="{{asset('theme/images/profile_footer.png')}}"></a></div>
       <div class="input_bt">
          <!-- <input type="text" class="mail_bt" placeholder="Your Email" name="Your Email"> -->
          <!-- <span class="subscribe_bt" id="basic-addon2"><a href="#">Subscribe</a></span> -->

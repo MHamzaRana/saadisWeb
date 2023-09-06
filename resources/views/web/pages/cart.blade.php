@@ -78,7 +78,9 @@
                     <div class="card mt-4" id="wrpItem_{{$new->id}}">
                         <div class="card-body">
                             <div class="row">
-                                <img class="col-md-4 card-img float-left prod-card-img" src="{{env('ADMIN_URL') .'/uploads/images/products/'. $new->images[0]->path}}">
+                                <img class="col-md-4 card-img float-left prod-card-img" 
+                                src="{{env('ADMIN_URL') .'/uploads/images/products/'. $new->images[0]->path}}"
+                                alt="Product Image">
                                 <div class="col-md-8">
                                     <h5 class="card-title">{{$new->name}}</h5>
                                     <p>Price: Rs. <span id="prc_pid{{($new->id)}}">{{$new->price}}</span></p>

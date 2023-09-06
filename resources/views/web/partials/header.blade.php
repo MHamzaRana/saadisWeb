@@ -1,7 +1,7 @@
 <!-- Mobile view  -->
 <div class="row mobile_nav">
     <div class="col-md-12 bg-dark p-3">
-        <span class="toggle_icon ml-2" onclick="openMobileNav()"><img src="{{asset('theme/images/toggle-icon.png')}}" alt="Toogle"></span>
+        <span class="toggle_icon ml-2" onclick="openMobileNav()"><img alt="Toggle" src="{{asset('theme/images/toggle-icon.png')}}" alt="Toogle"></span>
     </div>
 </div>
 <div id="mobileSidenav" class="mobilesidenav">
