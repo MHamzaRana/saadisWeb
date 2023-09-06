@@ -233,6 +233,15 @@
     .banner_section.layout_padding{
         display: none;
     }
+    .footer_section .input_bt{
+        display: none;
+    }
+    .footer_menu.items{
+        display: none;
+    }
+    .footer_logo img{
+        width: 100px;
+    }
     .social li {
         float: left;
     }

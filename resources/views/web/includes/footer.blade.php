@@ -7,7 +7,7 @@
          <!-- <span class="subscribe_bt" id="basic-addon2"><a href="#">Subscribe</a></span> -->
          <p>Saadi's Collection is an online store for ladies' original branded suits. At Saadi's Collection, you will find ladies' suits of all renowned brands at discount prices.</p>
       </div>
-      <div class="footer_menu">
+      <div class="footer_menu items">
          <ul>
             <li><a href="{{route('explore','best-seller')}}">Best Sellers</a></li>
             <li><a href="{{route('explore','all-collections')}}">All Collections</a></li>
