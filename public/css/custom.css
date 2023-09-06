@@ -51,6 +51,11 @@
 
 .loadMore i {
     font-weight: 600;
+    
+}
+.loadMore .icon-shadow{
+    background-color: #0ff;
+    box-shadow: 2px 8px 14px 10px #0ff;
 }
 
 .float {
@@ -180,6 +185,7 @@
 .social li a:hover {
     color: #f1f1f1;
 }
+/* intentionaly applieed on height  */
 @media screen and (max-height: 450px) {
     .mobilesidenav {
         padding-top: 15px;
@@ -211,6 +217,19 @@
     .banner_taital {
         font-size: 14px;
         text-shadow: #000 1px 1px;
+    }
+    .fashion_taital {
+        margin-top: 1.5rem !important;
+        padding: 0;
+        /* font-weight: lighter; */
+        letter-spacing: 10px;
+    }
+    
+    .header_section{
+        margin-bottom: 1rem;
+    }
+    .banner_section.layout_padding{
+        display: none;
     }
     .social li {
         float: left;

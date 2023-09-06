@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $newArrivals = Product::orderBy('id', 'desc')->limit(18)->get();
+        $newArrivals = Product::where('status', "publish")->orderBy('id', 'desc')->limit(18)->get();
         // $binSaeed = Product::where('brand', 'Bin Saeed')->orderBy('id', 'desc')->limit(6)->get();
         // $aalaya = Product::where('brand', 'Aalaya')->orderBy('id', 'desc')->limit(6)->get();
         // dd($newArrivals);
@@ -77,9 +77,14 @@ class HomeController extends Controller
                 $title = 'Best Seller';
                 break;
 
-            default:
+            case 'trending-now':
                 $products = Product::where('status', "publish")->where('created_at', '>=', Carbon::now()->subDays(5)->toDateTimeString())
                     ->orderBy('id', 'desc')->paginate(20);
+                $banner = asset('theme/images/new-arrival.jpg');
+                $title = 'Trending Now';
+                break;
+            default:
+                $products = Product::where('status', "publish")->orderBy('id', 'desc')->paginate(20);
                 $banner = asset('theme/images/new-arrival.jpg');
                 $title = 'New Arrival';
                 break;

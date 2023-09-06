@@ -41,7 +41,7 @@
     <!-- <link rel="stylesoeet" href="{{asset('theme/css/owl.theme.default.min.css')}}"> -->
     <!-- <link rel="stylesheet" href="{{asset('theme/css/jquery.fancybox.min.css')}}" media="screen"> -->
     <!-- end commented styles  -->
-    <link rel="stylesheet" href="{{asset('css/app.css?v=0.01')}}">
+    <link rel="stylesheet" href="{{asset('css/app.css?v=0.02')}}">
 
     @stack('styles')
 </head>

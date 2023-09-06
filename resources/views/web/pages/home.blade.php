@@ -30,7 +30,7 @@
                                     </div>
                                     <div class="btn_main">
                                         @if($new->inventory && $new->inventory->qty > 0)
-                                        <div class="buy_bt btn btn-default cart_add" data-id="{{$new->id}}"><a onclick="addToCart('{{$new->id}}');">Buy <i class="fa fa-shopping-cart"></i></a></div>
+                                        <div class="buy_bt btn btn-default cart_add" data-id="{{$new->id}}"><a onclick="addToCart('{{$new->id}}');">Add <i class="fa fa-shopping-cart"></i></a></div>
                                         <div class="buy_bt btn btn-default cart_remove" data-id="{{$new->id}}" style="display: none;"><a onclick="removeFromCart('{{$new->id}}');">Remove <i class="fa fa-shopping-cart"></i></a></div>
                                         <!-- <div class="seemore_bt"><a href="#">See More</a></div> -->
                                         @else

@@ -299,13 +299,13 @@
         min-height: 0;
     }
     .shirt_text {
-        font-size: 14px;
+        font-size: 13px;
     }
     .price_text {
         font-size: 14px
     }
     .buy_bt a {
-        font-size: 12px;
+        font-size: 1rem;
     }
     .seemore_bt a {
         font-size: 12px;
