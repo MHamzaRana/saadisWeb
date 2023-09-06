@@ -221,7 +221,8 @@
             // else if (totalQty > 25 && totalQty <= 30)
             //     $('#deliveryCharges').text(1500);
 
-            $('#deliveryCharges').text(0); // LIMITED TIME OFFER FREE HOME DELIVERY
+            // $('#deliveryCharges').text(0); // LIMITED TIME OFFER FREE HOME DELIVERY
+            $('#deliveryCharges').text(200); // Fixed DC 200
             setTimeout(() => {
                 netAmnt = grossAmnt + parseInt($('#deliveryCharges').text());
                 $('#netAmount').text(netAmnt);

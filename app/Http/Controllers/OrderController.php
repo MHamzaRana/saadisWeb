@@ -182,7 +182,8 @@ class OrderController extends Controller
             // else if ($totalQty > 25 && $totalQty <= 30)
             //     $deliveryCharges = 1500;
 
-            $deliveryCharges = 0; // LIMITED TIME OFFER FREE HOME DELIVERY
+            // $deliveryCharges = 0; // LIMITED TIME OFFER FREE HOME DELIVERY
+            $deliveryCharges = 200; // Fixed DC
 
             $order->price = $price + $deliveryCharges;
             $order->delivery_charges = $deliveryCharges;

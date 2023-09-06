@@ -58,9 +58,11 @@
 <script src="{{asset('theme/js/popper.min.js')}}"></script>
 <script src="{{asset('theme/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('theme/js/jquery-3.0.0.min.js')}}"></script>
-<script src="{{asset('theme/js/plugin.js')}}"></script>
+<!-- commented scripts  -->
+<!-- <script src="{{asset('theme/js/plugin.js')}}"></script> -->
 <!-- sidebar -->
-<script src="{{asset('theme/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+<!-- <script src="{{asset('theme/js/jquery.mCustomScrollbar.concat.min.js')}}"></script> -->
+<!-- end commented scripts  -->
 <script src="{{asset('theme/js/custom.js?v=0.01')}}"></script>
 <script src="{{asset('js/custom.js')}}"></script>
 <script>

@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- mobile metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- commented viewport  -->
+    <!-- <meta name="viewport" content="initial-scale=1, maximum-scale=1"> -->
     <!-- site metas -->
     <title>Saadi's Collection Ladies Original Branded Suits</title>
     <meta name="keywords" content="binsaeed, binsaeedcollection, original_binsaeed, binsaeedlawn, aalaya, aalayalawn, ladiessuits, ladiesdresses, ladies, suits, dresses, casual, partywear, brandedsuits, lawn, sale, discount, freeshipment, free_delivery">
@@ -23,10 +24,10 @@
     <link rel="stylesheet" href="{{asset('theme/css/responsive.css')}}">
     <!-- fevicon -->
     <link rel="icon" href="{{asset('theme/images/favicon.png')}}" type="image/gif" />
-    <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="{{asset('theme/css/jquery.mCustomScrollbar.min.css')}}">
+    <!-- Scrollbar Custom CSS --> <!-- commented styles  -->
+    <!-- <link rel="stylesheet" href="{{asset('theme/css/jquery.mCustomScrollbar.min.css')}}"> -->
     <link rel="stylesheet" href="{{asset('css/custom.css?n=0.03')}}">
-    <!-- Tweaks for older IEs-->
+    <!-- Tweaks for older IEs--> <!-- commented styles  -->
     <!-- <link rel="stylesheet" href="{{asset('vendor/font-awesome/css/font-awesome.css')}}"> -->
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
@@ -35,9 +36,11 @@
     <!--  -->
     <!-- owl stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Poppins:400,700&display=swap&subset=latin-ext" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('theme/css/owl.carousel.min.css')}}">
-    <link rel="stylesoeet" href="{{asset('theme/css/owl.theme.default.min.css')}}">
-    <link rel="stylesheet" href="{{asset('theme/css/jquery.fancybox.min.css')}}" media="screen">
+    <!-- commented styles  -->
+    <!-- <link rel="stylesheet" href="{{asset('theme/css/owl.carousel.min.css')}}"> -->
+    <!-- <link rel="stylesoeet" href="{{asset('theme/css/owl.theme.default.min.css')}}"> -->
+    <!-- <link rel="stylesheet" href="{{asset('theme/css/jquery.fancybox.min.css')}}" media="screen"> -->
+    <!-- end commented styles  -->
 
     @stack('styles')
 </head>

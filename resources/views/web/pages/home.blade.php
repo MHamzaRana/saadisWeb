@@ -9,7 +9,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="container">
-                    <h1 class="fashion_taital mt-5">New Arrival</h1>
+                    <h2 class="fashion_taital mt-5">New Arrival</h2>
                     <div class="fashion_section_2">
                         <div class="row">
                             @foreach($newArrivals as $new)
@@ -65,7 +65,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="container">
-                    <h1 class="fashion_taital">Bin Saeed</h1>
+                    <h2 class="fashion_taital">Bin Saeed</h2>
                     <div class="fashion_section_2">
                         <div class="row">
                             @foreach($binSaeed as $BSitem)
@@ -117,7 +117,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="container">
-                    <h1 class="fashion_taital">Aalaya</h1>
+                    <h2 class="fashion_taital">Aalaya</h2>
                     <div class="fashion_section_2">
                         <div class="row">
                             @foreach($aalaya as $ALitem)

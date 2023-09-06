@@ -9,7 +9,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="container">
-                    <h1 class="fashion_taital mt-5">{{$title}}</h1>
+                    <h2 class="fashion_taital mt-5">{{$title}}</h2>
                     <div class="fashion_section_2">
                         <div class="row">
                             @foreach($products as $new)
