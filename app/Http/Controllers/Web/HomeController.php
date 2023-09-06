@@ -26,14 +26,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $newArrivals = Product::orderBy('id', 'desc')->limit(6)->get();
-        $binSaeed = Product::where('brand', 'Bin Saeed')->orderBy('id', 'desc')->limit(6)->get();
-        $aalaya = Product::where('brand', 'Aalaya')->orderBy('id', 'desc')->limit(6)->get();
+        $newArrivals = Product::orderBy('id', 'desc')->limit(18)->get();
+        // $binSaeed = Product::where('brand', 'Bin Saeed')->orderBy('id', 'desc')->limit(6)->get();
+        // $aalaya = Product::where('brand', 'Aalaya')->orderBy('id', 'desc')->limit(6)->get();
         // dd($newArrivals);
         return view('web.pages.home', [
-            'newArrivals' => $newArrivals, 'binSaeed' => $binSaeed,
-            'aalaya' => $aalaya
+            'newArrivals' => $newArrivals
         ]);
+        // 'binSaeed' => $binSaeed,
+        //     'aalaya' => $aalaya
     }
 
     /**

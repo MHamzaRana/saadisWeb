@@ -1921,6 +1921,11 @@ input.mail_bt::placeholder {
 
 .loadMore i {
     font-weight: 600;
+    
+}
+.loadMore .icon-shadow{
+    background-color: #0ff;
+    box-shadow: 2px 8px 14px 10px #0ff;
 }
 
 .float {

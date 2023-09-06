@@ -71,7 +71,7 @@
                 $ids = [];
                 @endphp
                 <div class="col-md-6">
-                    <!-- * Delivery charges may vary depending on the parcel weight. -->
+                    <!-- * Delivery charges may vary depending on the parcel weight. npm install --save jquery -->
                     <!-- <span style="font-weight: bold;">📢 LIMITED TIME OFFER 📢 <br>
                         ALL Pakistan Home Delivery Is Free Now</span> -->
                     @foreach($products as $new)
