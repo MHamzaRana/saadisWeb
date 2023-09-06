@@ -21,11 +21,12 @@
                                     <h4 class="shirt_text">{{$new->name}}</h4>
                                     <p class="price_text">Price <s style="color: #969696;">Rs. {{$new->st_price}}</s><br><span style="color: #262626;"> Rs. {{$new->price}}</span></p>
                                     <div class="tshirt_img">
-                                        <img class="product-img" title="{{$new->label}}" src="{{env('ADMIN_URL') .'/uploads/images/products/'. $new->images[0]->path}}"
+                                        <!-- <img class="product-img" title="{{$new->label}}" src="{{env('ADMIN_URL') .'/uploads/images/products/'. $new->images[0]->path}}"
                                         alt="{{$new->label}}">
                                         <img class="play-button" onclick="playVideo('{{$new->video[0]->url}}');" data-url="{{$new->video[0]->url}}" src="{{asset('theme/images/play-button.png')}}" 
-                                        data-toggle="modal" data-target=".video-modal-lg" alt="Play">
-
+                                        data-toggle="modal" data-target=".video-modal-lg" alt="Play"> -->
+                                        <iframe width="267" height="476" class="prod-video" src="{{url($new->video[0]->url)}}" sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true">
+                                        </iframe>
                                         <!-- <iframe width="100%" height="500" src="https://www.youtube.com/embed/HyQWr89JVEg"
                                             sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation">
                                         </iframe> -->
